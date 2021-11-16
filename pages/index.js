@@ -16,10 +16,6 @@ export async function getStaticProps() {
   };
 }
 
-export async function getStaticPaths(){
-  
-}
-
 export default function Home({ projects }) {
   // console.log(projects);
   // console.log(projects[0].fields.mainImage.fields.file.url);
