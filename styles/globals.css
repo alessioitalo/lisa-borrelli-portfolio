@@ -17,3 +17,12 @@ a {
   box-sizing: border-box;
 }
 
+.image{
+  /* background-color: red; */
+}
+
+.main-img{
+  border: 10px solid white;
+  /* width: calc(100% - 10px); */
+  width: 100%;
+}

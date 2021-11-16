@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
       </Head>
       <main>
         <Splash />
-        <section className={styles.content}>{children}</section> 
+        <main className={styles.content}>{children}</main>
       </main>
       <footer className={styles.footer}>
         ©2021 Lisa Borrelli
