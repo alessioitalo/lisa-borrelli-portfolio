@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import styles from '../styles/Home.module.css';
 import Layout from '../component/Layout';
 import Head from 'next/head';
 import { createClient } from 'contentful';
@@ -17,8 +16,12 @@ export async function getStaticProps() {
   };
 }
 
+export async function getStaticPaths(){
+  
+}
+
 export default function Home({ projects }) {
-  console.log(projects);
+  // console.log(projects);
   // console.log(projects[0].fields.mainImage.fields.file.url);
   return (
     <>
