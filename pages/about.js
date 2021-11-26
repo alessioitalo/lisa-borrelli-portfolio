@@ -1,5 +1,13 @@
 import Layout from '../component/Layout';
 import Head from 'next/head';
+import Image from 'next/image';
+import styles from './About.module.css';
+import photo from '../public/photo.svg';
+import skills from '../public/skills.svg';
+import music from '../public/music.svg';
+import camera from '../public/camera.svg';
+import travel from '../public/travel.svg';
+import ciak from '../public/ciak.svg';
 
 const about = () => {
   return (
@@ -10,11 +18,94 @@ const about = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Layout>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus sit amet luctus venenatis lectus. Sit amet purus gravida quis blandit turpis cursus in hac. In eu mi bibendum neque egestas congue quisque egestas. Aenean sed adipiscing diam donec adipiscing tristique risus nec. Urna neque viverra justo nec ultrices. In hendrerit gravida rutrum quisque non tellus orci. Urna neque viverra justo nec ultrices dui sapien eget. Adipiscing elit ut aliquam purus sit amet luctus. Arcu cursus euismod quis viverra nibh. Nisi est sit amet facilisis magna etiam tempor orci eu. Ultricies mi quis hendrerit dolor. Feugiat nisl pretium fusce id. Eget nulla facilisi etiam dignissim diam quis enim.
-
-Tempus iaculis urna id volutpat lacus laoreet. Commodo odio aenean sed adipiscing diam donec. In egestas erat imperdiet sed euismod nisi porta lorem mollis. Enim tortor at auctor urna nunc id. Ut ornare lectus sit amet. Ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet. Libero nunc consequat interdum varius. Turpis nunc eget lorem dolor sed viverra. Tortor vitae purus faucibus ornare. Eget arcu dictum varius duis at consectetur lorem donec. In metus vulputate eu scelerisque felis.
-
-Tristique magna sit amet purus. Convallis tellus id interdum velit laoreet. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl. Nibh nisl condimentum id venenatis a condimentum vitae sapien pellentesque. Velit egestas dui id ornare arcu odio ut. Lectus arcu bibendum at varius vel pharetra vel. At quis risus sed vulputate odio. Neque laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt. Dignissim suspendisse in est ante in. Et leo duis ut diam quam nulla porttitor massa id. Sagittis orci a scelerisque purus semper eget duis at tellus. Tristique et egestas quis ipsum suspendisse ultrices. Orci nulla pellentesque dignissim enim sit amet venenatis urna cursus. Sit amet consectetur adipiscing elit ut aliquam purus sit. Ut tellus elementum sagittis vitae. Tempor commodo ullamcorper a lacus vestibulum sed. Non consectetur a erat nam.
+        <div className={styles.aboutContainer}>
+          <div className={styles.aboutContainerChild}>
+            <h1>
+              Ciao,
+              <br />I am Lisa
+            </h1>
+            <div className={styles.dots}>
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+            </div>
+            <h4>
+              I’m a Graphic & Digital Designer <br />
+              based in London
+            </h4>
+            <p>
+              My aim is to use my variety of skills to help businesses grow with
+              visual impactful design.{' '}
+            </p>
+          </div>
+          <div className={styles.aboutContainerChild}>
+            <Image src={photo} />
+          </div>
+        </div>
+        <div className={styles.aboutContainer}>
+          <h1>My Skills</h1>
+          <div className={styles.dots}>
+            <span />
+            <span />
+            <span />
+            <span />
+            <span />
+            <span />
+            <span />
+            <span />
+          </div>
+          <div className={styles.skills}>
+            <div>
+              UI DESIGN
+              <span className={`${styles.skill} ${styles.uiDesign}`}></span>
+            </div>
+            <div>
+              BRANDING
+              <span className={`${styles.skill} ${styles.branding}`}></span>
+            </div>
+            <div>
+              WORDPRESS
+              <span className={`${styles.skill} ${styles.wordpress}`}></span>
+            </div>
+            <div>
+              PHOTOGRAPHY
+              <span className={`${styles.skill} ${styles.photography}`}></span>
+            </div>
+            <div>
+              MAILCHIMP
+              <span className={`${styles.skill} ${styles.mailchimp}`}></span>
+            </div>
+            <div>
+              INFOGRAPHIC
+              <span className={`${styles.skill} ${styles.infographic}`}></span>
+            </div>
+          </div>
+          <Image src={skills} />
+        </div>
+        <div className={styles.aboutContainer}>
+          <h1>A little more about me</h1>
+          <div className={styles.dots}>
+            <span />
+            <span />
+            <span />
+            <span />
+            <span />
+            <span />
+            <span />
+            <span />
+          </div>
+          <div className={styles.icons}>
+            <Image src={travel} />
+            <Image src={music} />
+            <Image src={camera} />
+            <Image src={ciak} />
+          </div>
+        </div>
       </Layout>
     </>
   );

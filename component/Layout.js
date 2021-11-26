@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import styles from './Layout.module.css';
-import Splash from './Splash';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBehance } from '@fortawesome/free-brands-svg-icons';
 import { faDribbble } from '@fortawesome/free-brands-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import Navbar from './Navbar';
 
 const Layout = ({ children }) => {
   return (
@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main>
-        <Splash />
+        <Navbar />
         <main className={styles.content}>{children}</main>
       </main>
       <footer className={styles.footer}>

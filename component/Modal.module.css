@@ -1,5 +1,6 @@
 .modal{
-    position: absolute;
+    position: fixed;
+    /* position: absolute; */
     top: 0;
     left: 0;
     width: 100%;
@@ -13,6 +14,8 @@
     font-size: 3rem;
     color: #ffff;
     font-weight: 600;
+    z-index: 2;
+    /* overflow: hidden; */
 }
 
 .modal a {
@@ -20,7 +23,7 @@
 }
 
 .modal a:hover{
-    color: #f55c54;
+    color: #fe5f55;;
 }
 
 @media (max-width: 500px) {

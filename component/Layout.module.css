@@ -1,10 +1,11 @@
-.content{
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0 2rem;
+.content {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #0a0935;
+  color: #ffff;
 }
 
 .footer {
@@ -17,18 +18,18 @@
   align-items: center;
 }
 
-.icons{
-    display: flex;
-    justify-content: space-around;
-    padding: 1rem;
+.icons {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
 }
 
-.icons svg{
-    width: 20px;
-    cursor: pointer;
-    margin: 0 1rem;
+.icons svg {
+  width: 20px;
+  cursor: pointer;
+  margin: 0 1rem;
 }
 
-.icons svg:hover{
-    color: #f55c54;
+.icons svg:hover {
+  color:  #fe5f55;
 }

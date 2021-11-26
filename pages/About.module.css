@@ -1,0 +1,144 @@
+.aboutContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.aboutContainer h1 {
+  color: #fe5f55;
+  font-size: 3rem;
+}
+
+.aboutContainer:nth-of-type(2) {
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 2rem;
+}
+
+.aboutContainer:nth-of-type(3) {
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #fe5f55;
+  padding: 0 2rem;
+}
+
+.aboutContainer:nth-of-type(3) h1 {
+  color: #0a0935;
+  width: 40%;
+}
+
+.aboutContainerChild {
+  width: 50%;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.aboutContainerChild:nth-of-type(1) {
+  align-items: flex-start;
+  padding-left: 10vw;
+  padding-right: 3vw;
+}
+
+.aboutContainerChild:nth-of-type(2) {
+  background-color: #fe5f55;
+  align-items: center;
+  padding: 10rem 0;
+  height: 100%;
+}
+
+.aboutContainerChild h4 {
+  font-size: 1.5rem;
+}
+
+.dots {
+  display: flex;
+}
+
+.dots span {
+  width: 4px;
+  height: 4px;
+  background-color: #e4f427;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.skills {
+  width: 100%;
+  padding: 4rem 2rem;
+  font-size: 0.8rem;
+}
+
+.skills div {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 0 0 1rem;
+}
+
+.skill {
+  width: 80%;
+  height: 1rem;
+  border-radius: 10px;
+  border: 1px dotted #fe5f55;
+}
+
+.uiDesign,
+.branding {
+  background-color: #fe5f55;
+}
+
+.wordpress,
+.photography {
+  background: linear-gradient(90deg, #fe5f55 80%, rgba(0, 0, 0, 0) 0%);
+}
+
+.mailchimp,
+.infographic {
+  background: linear-gradient(90deg, #fe5f55 60%, rgba(0, 0, 0, 0) 0%);
+}
+
+.icons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 60vh;
+  padding: 4rem;
+}
+
+
+@media (max-width: 550px) {
+  .aboutContainer {
+    flex-direction: column;
+  }
+
+  .aboutContainerChild {
+    width: 100%;
+  }
+
+  .aboutContainerChild:nth-of-type(1) {
+    order: 2;
+  }
+
+  .aboutContainerChild:nth-of-type(2) {
+    order: 1;
+  }
+
+  .skills {
+    padding: 2rem 0;
+    font-size: 0.6rem;
+  }
+
+  .skill {
+    width: 50%;
+  }
+
+ .icons{
+   padding: 2rem 1rem;
+   /* align-items: space-around; */
+   /* justify-content: center; */
+ }
+}

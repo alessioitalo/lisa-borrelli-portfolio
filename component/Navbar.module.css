@@ -1,0 +1,97 @@
+.nav {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  color: #ffffff;
+  align-items: center;
+  /* position: absolute; */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background-color: #0a0935;
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+}
+
+.hamburger {
+  width: 40px;
+  height: 45px;
+  cursor: pointer;
+  position: relative;
+}
+
+.line,
+.line::before,
+.line::after {
+  height: 2px;
+  background-color: #ffff;
+  position: absolute;
+}
+
+.line {
+  width: 30px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+
+.line::before {
+  content: '';
+  width: 40px;
+  top: -10px;
+  right: 0;
+}
+
+.line::after {
+  content: '';
+  width: 20px;
+  top: 10px;
+  right: 0;
+}
+
+.animated {
+  width: 40px;
+  background-color: transparent;
+}
+
+.animated::before,
+.animated::after {
+  background-color: #ffff;
+  content: '';
+  width: 40px;
+  position: absolute;
+  transition: 0.2s linear;
+  top: 0;
+}
+
+.animated::before {
+  transform: rotate(45deg);
+}
+
+.animated::after {
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 350px) {
+  .nav {
+    padding: 2rem 0.5rem;
+  }
+  .name {
+    font-size: 1.5rem;
+  }
+
+  .info {
+    font-size: 0.59rem;
+  }
+}
