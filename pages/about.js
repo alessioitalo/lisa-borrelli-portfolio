@@ -10,10 +10,10 @@ import camera from '../public/camera.svg';
 import travel from '../public/travel.svg';
 import drink from '../public/drink.svg';
 import aboutImg from '../public/about.svg';
-import { useState } from 'react';
+// import { useState } from 'react';
 
-const About = () => {
-  const [showInterest, setShowInterest] = useState();
+const about = () => {
+  // const [showInterest, setShowInterest] = useState();
   return (
     <>
       <Head>
@@ -42,7 +42,6 @@ const About = () => {
             <div>
               <label htmlFor='uiDesign'>UI DESIGN</label>
               <progress id='uiDesign' value='100' max='100' />
-              {/* <meter min='0' max='100' value='100' /> */}
             </div>
             <div>
               <label htmlFor='branding'>BRANDING</label>
@@ -93,47 +92,47 @@ const About = () => {
             <Image
               src={travel}
               className={styles.icon}
-              onMouseEnter={() => {
-                setShowInterest('travel');
-              }}
-              onMouseLeave={() => {
-                setShowInterest();
-              }}
+              // onMouseEnter={() => {
+              //   setShowInterest('travel');
+              // }}
+              // onMouseLeave={() => {
+              //   setShowInterest();
+              // }}
             />
-            {showInterest === 'travel' && (
+            {/* {showInterest === 'travel' && (
               <Interest type={'travel'}>I love traveling!</Interest>
-            )}
+            )} */}
             <Image
               src={music}
               className={styles.icon}
-              onMouseEnter={() => {
-                setShowInterest('music');
-              }}
-              onMouseLeave={() => {
-                setShowInterest();
-              }}
+              // onMouseEnter={() => {
+              //   setShowInterest('music');
+              // }}
+              // onMouseLeave={() => {
+              //   setShowInterest();
+              // }}
             />
-            {showInterest === 'music' && (
+            {/* {showInterest === 'music' && (
               <Interest type={'music'}>I love music!</Interest>
-            )}
+            )} */}
             <Image
               src={camera}
               className={styles.icon}
-              onMouseEnter={() => setShowInterest('camera')}
-              onMouseLeave={() => setShowInterest()}
+              // onMouseEnter={() => setShowInterest('camera')}
+              // onMouseLeave={() => setShowInterest()}
             />
-            {showInterest === 'camera' && (
+            {/* {showInterest === 'camera' && (
               <Interest type={'photo'}>I love taking photos!</Interest>
-            )}
+            )} */}
             <Image
               src={drink}
               className={styles.icon}
-              onMouseEnter={() => setShowInterest('movies')}
-              onMouseLeave={() => setShowInterest()}
+              // onMouseEnter={() => setShowInterest('movies')}
+              // onMouseLeave={() => setShowInterest()}
             />
-            {showInterest === 'drink' && (
+            {/* {showInterest === 'drink' && (
               <Interest type={'drink'}>I love wine!</Interest>
-            )}
+            )} */}
           </div>
         </div>
       </Layout>
