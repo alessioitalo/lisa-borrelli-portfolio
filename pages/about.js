@@ -12,7 +12,7 @@ import drink from '../public/drink.svg';
 import aboutImg from '../public/about.svg';
 import { useState } from 'react';
 
-const about = () => {
+const About = () => {
   const [showInterest, setShowInterest] = useState();
   return (
     <>
