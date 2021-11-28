@@ -1,0 +1,31 @@
+.interest {
+  background-color: #0a0935;
+  color: #e4f427;
+  width: 80%;
+  text-align: center;
+  position: absolute;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.travel {
+  /* background-color: green; */
+}
+
+.travel::after {
+  content: 'test';
+  background-color: #0a0935;
+  width: 40px;
+  height: 90px;
+  position: absolute;
+  top: 100%;
+}
+
+.music {
+}
+
+.movies {
+}
+
+.photo {
+}

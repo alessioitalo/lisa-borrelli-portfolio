@@ -1,78 +1,121 @@
-.aboutContainer {
+.container {
   display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  justify-content: space-evenly;
   align-items: center;
   width: 100%;
   min-height: 100vh;
-}
-
-.aboutContainer h1 {
   color: #fe5f55;
-  font-size: 3rem;
 }
 
+.container:nth-of-type(2),
+.container:nth-of-type(4) {
+  background-color: #fe5f55;
+  color: #0a0935;
+}
+
+.title{
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.second{
+  align-items: flex-end;
+}
+
+/* .title:nth-of-type(1){
+  background-color: red;
+} */
+
+.bio {
+  width: 33%;
+  font-size: 1.5rem;
+  padding: 0 2rem;
+  font-weight: bold;
+  line-height: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bio > div {
+  padding: 2rem 0;
+}
+
+
+
+/* .title:nth-of-type(1) h1, .title:nth-of-type(1) div{
+  align-self: flex-end;
+  margin-right: 3rem;
+} */
+
+/* .title:nth-of-type(2) h1, .title:nth-of-type(2) div{
+  align-self: flex-start;
+}
+ */
+
+
+
+
+/* 
 .aboutContainer:nth-of-type(2) {
   flex-direction: column;
   align-items: flex-end;
   padding: 2rem;
-}
+} */
 
-.aboutContainer:nth-of-type(3) {
+/* .aboutContainer:nth-of-type(3) {
   flex-direction: column;
   align-items: flex-start;
   background-color: #fe5f55;
+  background-image: url('../public/circle-bg.svg');
   padding: 0 2rem;
-}
+} */
 
-.aboutContainer:nth-of-type(3) h1 {
+/* .aboutContainer:nth-of-type(3) h1 {
   color: #0a0935;
-  width: 40%;
-}
-
-.aboutContainerChild {
-  width: 50%;
-  height: inherit;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100vh;
-}
-
-.aboutContainerChild:nth-of-type(1) {
-  align-items: flex-start;
-  padding-left: 10vw;
-  padding-right: 3vw;
-}
-
-.aboutContainerChild:nth-of-type(2) {
-  background-color: #fe5f55;
-  align-items: center;
-  padding: 10rem 0;
-  height: 100%;
-}
-
-.aboutContainerChild h4 {
-  font-size: 1.5rem;
-}
-
-.dots {
-  display: flex;
-}
-
-.dots span {
-  width: 4px;
-  height: 4px;
-  background-color: #e4f427;
-  margin-right: 10px;
-  border-radius: 50%;
-}
+  width: 60%;
+} */
 
 .skills {
-  width: 100%;
-  padding: 4rem 2rem;
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+  padding: 2rem 0;
+  color: #ffffff;
   font-size: 0.8rem;
+  /* justify-content: space-between; */
+  /* align-items: space-between; */
 }
 
-.skills div {
+.skills > div {
+  margin: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .skills progress,
+.skills progress::-webkit-progress-bar,
+.skills progress::-webkit-progress-value,
+.skills progress::-moz-progress-bar {
+} */
+
+.skills progress[value] {
+  /* -moz-appearance: none;
+  appearance: none; */
+  width: 80%;
+  padding: 0.5rem;
+  /* color: red; */
+  /* border-radius: 10px; */
+}
+
+/* .skills div {
   display: flex;
   justify-content: space-between;
   padding: 1.5rem 0 0 1rem;
@@ -83,9 +126,9 @@
   height: 1rem;
   border-radius: 10px;
   border: 1px dotted #fe5f55;
-}
+} */
 
-.uiDesign,
+/* .uiDesign,
 .branding {
   background-color: #fe5f55;
 }
@@ -98,47 +141,55 @@
 .mailchimp,
 .infographic {
   background: linear-gradient(90deg, #fe5f55 60%, rgba(0, 0, 0, 0) 0%);
-}
+} */
 
 .icons {
+  align-self: center;
   width: 100%;
   display: flex;
-  align-items: center;
   justify-content: space-around;
   min-height: 60vh;
   padding: 4rem;
 }
 
-
 @media (max-width: 550px) {
-  .aboutContainer {
-    flex-direction: column;
+  .container {
+    padding: 0 1rem;
   }
 
-  .aboutContainerChild {
+  .bio {
     width: 100%;
+    font-size: 1.2rem;
   }
 
-  .aboutContainerChild:nth-of-type(1) {
-    order: 2;
-  }
-
-  .aboutContainerChild:nth-of-type(2) {
-    order: 1;
+  .title{
+    font-size: 1rem;
   }
 
   .skills {
+    width: 100%;
+  }
+
+  .skills progress {
+    width: 50%;
+  }
+
+  /* .skills {
     padding: 2rem 0;
     font-size: 0.6rem;
   }
 
   .skill {
     width: 50%;
+  } */
+
+  .icons {
+    padding: 2rem 0;
   }
 
- .icons{
-   padding: 2rem 1rem;
-   /* align-items: space-around; */
-   /* justify-content: center; */
- }
+  .icons img {
+    cursor: pointer;
+    padding: 0;
+    min-width: 90% !important;
+  }
 }

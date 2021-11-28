@@ -1,0 +1,12 @@
+.dots {
+    display: flex;
+  }
+  
+  .dots span {
+    width: 4px;
+    height: 4px;
+    background-color: #e4f427;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+  

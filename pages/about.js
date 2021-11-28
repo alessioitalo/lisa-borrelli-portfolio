@@ -1,15 +1,19 @@
 import Layout from '../component/Layout';
+import Dots from '../component/Dots';
+import Interest from '../component/Interest';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from './About.module.css';
-import photo from '../public/photo.svg';
 import skills from '../public/skills.svg';
 import music from '../public/music.svg';
 import camera from '../public/camera.svg';
 import travel from '../public/travel.svg';
-import ciak from '../public/ciak.svg';
+import drink from '../public/drink.svg';
+import aboutImg from '../public/about.svg';
+import { useState } from 'react';
 
 const about = () => {
+  const [showInterest, setShowInterest] = useState();
   return (
     <>
       <Head>
@@ -18,49 +22,42 @@ const about = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Layout>
-        <div className={styles.aboutContainer}>
-          <div className={styles.aboutContainerChild}>
-            <h1>
-              Ciao,
-              <br />I am Lisa
-            </h1>
-            <div className={styles.dots}>
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-            </div>
-            <h4>
-              I’m a Graphic & Digital Designer <br />
-              based in London
-            </h4>
-            <p>
-              My aim is to use my variety of skills to help businesses grow with
-              visual impactful design.{' '}
-            </p>
-          </div>
-          <div className={styles.aboutContainerChild}>
-            <Image src={photo} />
+        <div className={styles.container}>
+          <Image src={aboutImg}/>
+        </div>
+        <div className={styles.container}>
+          <div className={styles.bio}>
+            <Dots />
+            Ciao, I am Lisa Borrelli and I am based in London. My aim is to use
+            my variety of skills to help businesses grow with visual impactful
+            design.
           </div>
         </div>
-        <div className={styles.aboutContainer}>
-          <h1>My Skills</h1>
-          <div className={styles.dots}>
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
+        <div className={styles.container}>
+          <div className={`${styles.title} ${styles.second}`}>
+            <h1>My Skills</h1>
+            <Dots />
           </div>
           <div className={styles.skills}>
             <div>
+              <label htmlFor='uiDesign'>UI DESIGN</label>
+              <progress id='uiDesign' value='100' max='100' />
+              {/* <meter min='0' max='100' value='100' /> */}
+            </div>
+            <div>
+              <label htmlFor='branding'>BRANDING</label>
+              <progress id='branding' value='100' max='100' />
+            </div>
+            <div>
+              <label htmlFor='wordpress'>WORDPRESS</label>
+              <progress id='wordpress' value='80' max='100' />
+            </div>
+            <div>
+              <label htmlFor='photography'>PHOTOGRAPHY</label>
+              <progress id='photography' value='80' max='100' />
+            </div>
+
+            {/* <div>
               UI DESIGN
               <span className={`${styles.skill} ${styles.uiDesign}`}></span>
             </div>
@@ -83,27 +80,60 @@ const about = () => {
             <div>
               INFOGRAPHIC
               <span className={`${styles.skill} ${styles.infographic}`}></span>
-            </div>
+            </div> */}
           </div>
           <Image src={skills} />
         </div>
-        <div className={styles.aboutContainer}>
-          <h1>A little more about me</h1>
-          <div className={styles.dots}>
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
+        <div className={styles.container}>
+          <div className={styles.title}>
+            <h1>A little more about me</h1>
+            <Dots />
           </div>
           <div className={styles.icons}>
-            <Image src={travel} />
-            <Image src={music} />
-            <Image src={camera} />
-            <Image src={ciak} />
+            <Image
+              src={travel}
+              className={styles.icon}
+              onMouseEnter={() => {
+                setShowInterest('travel');
+              }}
+              onMouseLeave={() => {
+                setShowInterest();
+              }}
+            />
+            {showInterest === 'travel' && (
+              <Interest type={'travel'}>I love traveling!</Interest>
+            )}
+            <Image
+              src={music}
+              className={styles.icon}
+              onMouseEnter={() => {
+                setShowInterest('music');
+              }}
+              onMouseLeave={() => {
+                setShowInterest();
+              }}
+            />
+            {showInterest === 'music' && (
+              <Interest type={'music'}>I love music!</Interest>
+            )}
+            <Image
+              src={camera}
+              className={styles.icon}
+              onMouseEnter={() => setShowInterest('camera')}
+              onMouseLeave={() => setShowInterest()}
+            />
+            {showInterest === 'camera' && (
+              <Interest type={'photo'}>I love taking photos!</Interest>
+            )}
+            <Image
+              src={drink}
+              className={styles.icon}
+              onMouseEnter={() => setShowInterest('movies')}
+              onMouseLeave={() => setShowInterest()}
+            />
+            {showInterest === 'drink' && (
+              <Interest type={'drink'}>I love wine!</Interest>
+            )}
           </div>
         </div>
       </Layout>
