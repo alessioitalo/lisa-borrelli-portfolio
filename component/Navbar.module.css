@@ -13,6 +13,14 @@
   background-color: #0a0935;
 }
 
+.transparent{
+  background-color: transparent;
+}
+
+.nav, .transparent{
+  transition: linear 0.2s;
+}
+
 .name {
   font-size: 2rem;
   font-weight: 600;

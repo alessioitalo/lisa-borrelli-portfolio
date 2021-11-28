@@ -23,7 +23,7 @@ const about = () => {
       </Head>
       <Layout>
         <div className={styles.container}>
-          <Image src={aboutImg}/>
+          <Image src={aboutImg} />
         </div>
         <div className={styles.container}>
           <div className={styles.bio}>
@@ -41,45 +41,28 @@ const about = () => {
           <div className={styles.skills}>
             <div>
               <label htmlFor='uiDesign'>UI DESIGN</label>
-              <progress id='uiDesign' value='100' max='100' />
+              <span className={styles.skill} id='uiDesign'></span>
             </div>
             <div>
               <label htmlFor='branding'>BRANDING</label>
-              <progress id='branding' value='100' max='100' />
+              <span className={styles.skill} id='branding'></span>
             </div>
             <div>
               <label htmlFor='wordpress'>WORDPRESS</label>
-              <progress id='wordpress' value='80' max='100' />
+              <span className={styles.skill} id='wordpress'></span>
             </div>
             <div>
               <label htmlFor='photography'>PHOTOGRAPHY</label>
-              <progress id='photography' value='80' max='100' />
-            </div>
-
-            {/* <div>
-              UI DESIGN
-              <span className={`${styles.skill} ${styles.uiDesign}`}></span>
+              <span className={styles.skill} id='photography'></span>
             </div>
             <div>
-              BRANDING
-              <span className={`${styles.skill} ${styles.branding}`}></span>
+              <label htmlFor='photography'>PHOTOGRAPHY</label>
+              <span className={styles.skill} id='mailchimp'></span>
             </div>
             <div>
-              WORDPRESS
-              <span className={`${styles.skill} ${styles.wordpress}`}></span>
+              <label htmlFor='infographic'>INFOGRAPHIC</label>
+              <span className={styles.skill} id='infographic'></span>
             </div>
-            <div>
-              PHOTOGRAPHY
-              <span className={`${styles.skill} ${styles.photography}`}></span>
-            </div>
-            <div>
-              MAILCHIMP
-              <span className={`${styles.skill} ${styles.mailchimp}`}></span>
-            </div>
-            <div>
-              INFOGRAPHIC
-              <span className={`${styles.skill} ${styles.infographic}`}></span>
-            </div> */}
           </div>
           <Image src={skills} />
         </div>

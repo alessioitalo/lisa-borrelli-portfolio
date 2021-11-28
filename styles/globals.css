@@ -5,6 +5,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
+  min-width: 300px;
 }
 
 * {
@@ -36,22 +37,18 @@ a {
   opacity: 0.5;
 }
 
-/* progress {
+#uiDesign,
+#branding {
   background-color: #fe5f55;
-} */
-
-/* progress::-moz-progress-bar,
-progress::-webkit-progress-value,
-progress {
-
-} */
-
-/* progress::-webkit-progress-bar {
-  background-color: #000!important;
-  width: 100%;
 }
-progress::-webkit-progress-value {
-  background-color: #aaa !important;
-} */
 
+#wordpress,
+#photography {
+  background: linear-gradient(90deg, #fe5f55 80%, rgba(0, 0, 0, 0) 0%);
+}
+
+#mailchimp,
+#infographic {
+  background: linear-gradient(90deg, #fe5f55 60%, rgba(0, 0, 0, 0) 0%);
+}
 

@@ -1,7 +1,6 @@
 .container {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
@@ -28,9 +27,6 @@
   align-items: flex-end;
 }
 
-/* .title:nth-of-type(1){
-  background-color: red;
-} */
 
 .bio {
   width: 33%;
@@ -48,41 +44,6 @@
   padding: 2rem 0;
 }
 
-
-
-/* .title:nth-of-type(1) h1, .title:nth-of-type(1) div{
-  align-self: flex-end;
-  margin-right: 3rem;
-} */
-
-/* .title:nth-of-type(2) h1, .title:nth-of-type(2) div{
-  align-self: flex-start;
-}
- */
-
-
-
-
-/* 
-.aboutContainer:nth-of-type(2) {
-  flex-direction: column;
-  align-items: flex-end;
-  padding: 2rem;
-} */
-
-/* .aboutContainer:nth-of-type(3) {
-  flex-direction: column;
-  align-items: flex-start;
-  background-color: #fe5f55;
-  background-image: url('../public/circle-bg.svg');
-  padding: 0 2rem;
-} */
-
-/* .aboutContainer:nth-of-type(3) h1 {
-  color: #0a0935;
-  width: 60%;
-} */
-
 .skills {
   display: flex;
   width: 60%;
@@ -90,8 +51,6 @@
   padding: 2rem 0;
   color: #ffffff;
   font-size: 0.8rem;
-  /* justify-content: space-between; */
-  /* align-items: space-between; */
 }
 
 .skills > div {
@@ -100,48 +59,13 @@
   justify-content: space-between;
 }
 
-/* .skills progress,
-.skills progress::-webkit-progress-bar,
-.skills progress::-webkit-progress-value,
-.skills progress::-moz-progress-bar {
-} */
-
-.skills progress[value] {
-  /* -moz-appearance: none;
-  appearance: none; */
-  width: 80%;
-  padding: 0.5rem;
-  /* color: red; */
-  /* border-radius: 10px; */
-}
-
-/* .skills div {
-  display: flex;
-  justify-content: space-between;
-  padding: 1.5rem 0 0 1rem;
-}
-
 .skill {
-  width: 80%;
+  width: 60%;
   height: 1rem;
   border-radius: 10px;
   border: 1px dotted #fe5f55;
-} */
-
-/* .uiDesign,
-.branding {
-  background-color: #fe5f55;
 }
 
-.wordpress,
-.photography {
-  background: linear-gradient(90deg, #fe5f55 80%, rgba(0, 0, 0, 0) 0%);
-}
-
-.mailchimp,
-.infographic {
-  background: linear-gradient(90deg, #fe5f55 60%, rgba(0, 0, 0, 0) 0%);
-} */
 
 .icons {
   align-self: center;
@@ -164,6 +88,7 @@
 
   .title{
     font-size: 1rem;
+    padding: 0;
   }
 
   .skills {
@@ -173,16 +98,6 @@
   .skills progress {
     width: 50%;
   }
-
-  /* .skills {
-    padding: 2rem 0;
-    font-size: 0.6rem;
-  }
-
-  .skill {
-    width: 50%;
-  } */
-
   .icons {
     padding: 2rem 0;
   }

@@ -6,6 +6,8 @@ import styles from './Index.module.css';
 import photo from '../public/photo.svg';
 import { createClient } from 'contentful';
 import Typewriter from 'typewriter-effect';
+import ReactCarousel, { AFTER, CENTER, BEFORE } from "react-carousel-animated";
+import "react-carousel-animated/dist/style.css";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -57,6 +59,7 @@ export default function Home({ projects }) {
             <Image src={photo} />
           </div>
         </div>
+        {/* <ReactCarousel> */}
         {projects.map((project) => {
           return (
             <div key={project.sys.id} className='image'>
@@ -72,6 +75,7 @@ export default function Home({ projects }) {
             </div>
           );
         })}
+        {/* </ReactCarousel> */}
       </Layout>
     </>
   );
