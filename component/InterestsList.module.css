@@ -1,0 +1,21 @@
+.icons {
+  align-self: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  min-height: 60vh;
+  padding: 4rem 8rem;
+  position: relative;
+}
+
+@media (max-width: 650px) {
+  .icons {
+    padding: 2rem 0;
+    width: 100%;
+  }
+
+  .icons img {
+    padding: 0;
+    min-width: 90% !important;
+  }
+}

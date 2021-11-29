@@ -1,6 +1,5 @@
 .interest {
   width: 20%;
-  /* height: 60px; */
   background: #0a0935;
   position: relative;
   position: absolute;
@@ -42,9 +41,7 @@
 }
 
 @media (max-width: 1000px) {
-  /* .icons{
-    width:100%;
-  } */
+
   .interest {
     width: 25%;
     height: 100px;

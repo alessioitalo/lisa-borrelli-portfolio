@@ -1,22 +1,23 @@
 import Layout from '../component/Layout';
 import Dots from '../component/Dots';
-import Interest from '../component/Interest';
+// import Interest from '../component/Interest';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from './About.module.css';
 import skills from '../public/skills.svg';
-import music from '../public/music.svg';
-import camera from '../public/camera.svg';
-import travel from '../public/travel.svg';
-import drink from '../public/drink.svg';
+// import music from '../public/music.svg';
+// import camera from '../public/camera.svg';
+// import travel from '../public/travel.svg';
+// import drink from '../public/drink.svg';
 import aboutImg from '../public/about.svg';
-import { useState } from 'react';
+import InterestsList from '../component/InterestsList';
+// import { useState } from 'react';
 
-const About = () => {
-  const [showTravel, setShowTravel] = useState(false);
-  const [showMusic, setShowMusic] = useState(false);
-  const [showDrink, setShowDrink] = useState(false);
-  const [showPhoto, setShowPhoto] = useState(false);
+const about = () => {
+  // const [showTravel, setShowTravel] = useState(false);
+  // const [showMusic, setShowMusic] = useState(false);
+  // const [showDrink, setShowDrink] = useState(false);
+  // const [showPhoto, setShowPhoto] = useState(false);
   return (
     <>
       <Head>
@@ -88,7 +89,8 @@ const About = () => {
             <h1>Things I like</h1>
             <Dots />
           </div>
-          <div className={styles.icons}>
+          <InterestsList />
+          {/* <div className={styles.icons}>
             <Image
               src={travel}
               id='travel'
@@ -140,7 +142,7 @@ const About = () => {
             {showDrink && (
               <Interest type={'drink'}>I love a glass of red wine! </Interest>
             )}
-          </div>
+          </div> */}
         </div>
       </Layout>
     </>
