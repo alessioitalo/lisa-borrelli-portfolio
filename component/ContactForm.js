@@ -25,7 +25,7 @@ const ContactForm = () => {
   return (
     <form className={styles.form} onSubmit={formik.handleSubmit}>
       <span>
-        <div className={styles.labelContainer}>
+        <div>
           <label htmlFor='name'>YOUR NAME</label>
           <div className={styles.error}>
             {formik.touched.name && formik.errors.name}
@@ -40,7 +40,7 @@ const ContactForm = () => {
         />
       </span>
       <span>
-        <div className={styles.labelContainer}>
+        <div>
           <label htmlFor='email'>YOUR EMAIL ADDRESS</label>
           <div className={styles.error}>
             {formik.touched.email && formik.errors.email}
@@ -64,7 +64,7 @@ const ContactForm = () => {
         <textarea
           id='message'
           value={formik.values.message}
-          rows='20'
+          rows='14'
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
         />

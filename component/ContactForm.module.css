@@ -8,6 +8,7 @@
 .form label{
     font-weight: bold;
     display: block;
+    /* min-width: 220px; */
 }
 
 .form span{
@@ -25,9 +26,14 @@
     border-bottom: 2px solid #000;
 }
 
+.form input:focus{
+    outline: none;
+}
+
 .form textarea{
     border: 2px solid #000;
     border-radius: 5px;
+    resize: vertical;
 }
 .form button{
     margin-top: 1rem;
@@ -38,9 +44,38 @@
     border: none;
     font-weight: bold;
     font-family: inherit;
+    cursor: pointer;
+    width: 60%;
+    align-self: flex-end;
 }
-/* 
-.labelContainer{
-    display: flex;
-    flex-direction: column;
-} */
+
+.form button:hover{
+    background-color: #0a0935;;
+    color: #fff;
+}
+
+.error{
+    color: #ee4d4d;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 800px){
+    .form{
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .form span{
+        flex-direction: column;
+    }
+
+    .form input, .form textarea{
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    .form button{
+        width: 100%;
+    }
+
+}
