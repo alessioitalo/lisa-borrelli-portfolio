@@ -14,7 +14,14 @@
   color: #0a0935;
 }
 
-.title{
+.container:nth-of-type(4){
+  background-image: url('../public/circles-bg.svg');
+  background-repeat: no-repeat;
+  background-position-x: right;
+  /* background-size: auto; */
+}
+
+.title {
   font-size: 2rem;
   display: flex;
   flex-direction: column;
@@ -23,10 +30,14 @@
   padding: 0 2rem;
 }
 
-.second{
-  align-items: flex-end;
+.skillsImage {
+  align-self: flex-end;
+  padding: 2rem;
 }
 
+.second {
+  align-items: flex-end;
+}
 
 .bio {
   width: 55%;
@@ -66,19 +77,24 @@
   border: 1px dotted #fe5f55;
 }
 
-
 .icons {
   align-self: center;
   width: 100%;
   display: flex;
   justify-content: space-around;
   min-height: 60vh;
-  padding: 4rem;
+  padding: 4rem 8rem;
+  position: relative;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 650px) {
   .container {
     padding: 0 1rem;
+  }
+
+  .container:nth-of-type(4){
+    background-size: cover;
+    background-position-x: center;
   }
 
   .bio {
@@ -86,7 +102,7 @@
     font-size: 1.2rem;
   }
 
-  .title{
+  .title {
     font-size: 1rem;
     padding: 0;
   }
@@ -100,10 +116,10 @@
   }
   .icons {
     padding: 2rem 0;
+    width: 100%;
   }
 
   .icons img {
-    cursor: pointer;
     padding: 0;
     min-width: 90% !important;
   }

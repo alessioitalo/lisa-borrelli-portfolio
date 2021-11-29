@@ -1,31 +1,87 @@
 .interest {
-  background-color: #0a0935;
-  color: #e4f427;
-  width: 80%;
-  text-align: center;
+  width: 20%;
+  /* height: 60px; */
+  background: #0a0935;
+  position: relative;
   position: absolute;
-  padding: 2rem;
-  border-radius: 10px;
+  padding: 1rem;
+  top: 75px;
+  left: 0;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e4f427;
+}
+.interest:before {
+  content: '';
+  position: absolute;
+  right: 100%;
+  top: 90%;
+  left: 10%;
+  width: 0;
+  height: 0;
+  border-right: 13px solid transparent;
+  border-top: 26px solid #0a0935;
+  border-left: 13px solid transparent;
 }
 
 .travel {
-  /* background-color: green; */
+  left: 16%;
 }
-
-.travel::after {
-  content: 'test';
-  background-color: #0a0935;
-  width: 40px;
-  height: 90px;
-  position: absolute;
-  top: 100%;
-}
-
 .music {
+  left: 33%;
 }
-
-.movies {
-}
-
 .photo {
+  left: 55%;
+}
+.drink {
+  left: 76%;
+}
+
+@media (max-width: 1000px) {
+  /* .icons{
+    width:100%;
+  } */
+  .interest {
+    width: 25%;
+    height: 100px;
+    top: 10%;
+  }
+  .travel {
+    left: 15%;
+  }
+  .music {
+    left: 33%;
+  }
+  .photo {
+    left: 50%;
+  }
+  .drink {
+    left: 67%;
+  }
+}
+
+@media (max-width: 650px) {
+  
+  .travel {
+    left: 8%;
+  }
+  .music {
+    left: 30%;
+  }
+  .photo {
+    left: 55%;
+  }
+  .drink {
+    left: 76%;
+  }
+}
+
+@media (max-width: 550px) {
+  .interest {
+    display: none;
+  }
 }

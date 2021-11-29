@@ -1,6 +1,6 @@
 import Layout from '../component/Layout';
 import Dots from '../component/Dots';
-// import Interest from '../component/Interest';
+import Interest from '../component/Interest';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from './About.module.css';
@@ -10,10 +10,13 @@ import camera from '../public/camera.svg';
 import travel from '../public/travel.svg';
 import drink from '../public/drink.svg';
 import aboutImg from '../public/about.svg';
-// import { useState } from 'react';
+import { useState } from 'react';
 
 const about = () => {
-  // const [showInterest, setShowInterest] = useState();
+  const [showTravel, setShowTravel] = useState(false);
+  const [showMusic, setShowMusic] = useState(false);
+  const [showDrink, setShowDrink] = useState(false);
+  const [showPhoto, setShowPhoto] = useState(false);
   return (
     <>
       <Head>
@@ -76,58 +79,67 @@ const about = () => {
               <span className={styles.skill} id='infographic'></span>
             </div>
           </div>
-          <Image src={skills} />
+          <div className={styles.skillsImage}>
+            <Image src={skills} />
+          </div>
         </div>
         <div className={styles.container}>
           <div className={styles.title}>
-            <h1>A little more about me</h1>
+            <h1>Things I like</h1>
             <Dots />
           </div>
           <div className={styles.icons}>
             <Image
               src={travel}
+              id='travel'
               className={styles.icon}
-              // onMouseEnter={() => {
-              //   setShowInterest('travel');
-              // }}
-              // onMouseLeave={() => {
-              //   setShowInterest();
-              // }}
+              onMouseEnter={() => {
+                setShowTravel(true);
+              }}
+              onMouseLeave={() => {
+                setShowTravel(false);
+              }}
             />
-            {/* {showInterest === 'travel' && (
-              <Interest type={'travel'}>I love traveling!</Interest>
-            )} */}
+            {showTravel && <Interest type={'travel'}>I love traveling! </Interest>}
             <Image
               src={music}
               className={styles.icon}
-              // onMouseEnter={() => {
-              //   setShowInterest('music');
-              // }}
-              // onMouseLeave={() => {
-              //   setShowInterest();
-              // }}
+              onMouseEnter={() => {
+                setShowMusic(true);
+              }}
+              onMouseLeave={() => {
+                setShowMusic(false);
+              }}
             />
-            {/* {showInterest === 'music' && (
-              <Interest type={'music'}>I love music!</Interest>
-            )} */}
+            {showMusic && (
+              <Interest type={'music'}>I love listening to Rock music! </Interest>
+            )}
             <Image
               src={camera}
               className={styles.icon}
-              // onMouseEnter={() => setShowInterest('camera')}
-              // onMouseLeave={() => setShowInterest()}
+              onMouseEnter={() => {
+                setShowPhoto(true);
+              }}
+              onMouseLeave={() => {
+                setShowPhoto(false);
+              }}
             />
-            {/* {showInterest === 'camera' && (
-              <Interest type={'photo'}>I love taking photos!</Interest>
-            )} */}
+            {showPhoto && (
+              <Interest type={'photo'}>I love taking pictures! </Interest>
+            )}
             <Image
               src={drink}
               className={styles.icon}
-              // onMouseEnter={() => setShowInterest('movies')}
-              // onMouseLeave={() => setShowInterest()}
+              onMouseEnter={() => {
+                setShowDrink(true);
+              }}
+              onMouseLeave={() => {
+                setShowDrink(false);
+              }}
             />
-            {/* {showInterest === 'drink' && (
-              <Interest type={'drink'}>I love wine!</Interest>
-            )} */}
+            {showDrink && (
+              <Interest type={'drink'}>I love a glass of red wine! </Interest>
+            )}
           </div>
         </div>
       </Layout>
