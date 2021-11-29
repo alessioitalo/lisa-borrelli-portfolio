@@ -6,8 +6,7 @@ import styles from './Index.module.css';
 import photo from '../public/photo.svg';
 import { createClient } from 'contentful';
 import Typewriter from 'typewriter-effect';
-import ReactCarousel, { AFTER, CENTER, BEFORE } from "react-carousel-animated";
-import "react-carousel-animated/dist/style.css";
+import Carousel from '../component/Carousel';
 
 export async function getStaticProps() {
   const client = createClient({
@@ -59,23 +58,21 @@ export default function Home({ projects }) {
             <Image src={photo} />
           </div>
         </div>
-        {/* <ReactCarousel> */}
-        {projects.map((project) => {
+        <Carousel />
+        
+        {/* {projects.map((project) => {
           return (
             <div key={project.sys.id} className='image'>
               <div className='main-project-overlay' />
               <Image
                 className='main-project-img'
                 src={`https:${project.fields.mainImage.fields.file.url}`}
-                // width={800}
-                // height={650}
                 layout='fill'
                 objectFit='cover'
               />
             </div>
           );
-        })}
-        {/* </ReactCarousel> */}
+        })} */}
       </Layout>
     </>
   );

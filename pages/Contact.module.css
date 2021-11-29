@@ -1,9 +1,18 @@
+.container,
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* justify-content: flex-start; */
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    min-height: 100vh;
-    background-color: #fe5f55;
-  }
+  background-color: #fe5f55;
+}
+
+.formContainer{
+  background-color: #FFFF;
+}

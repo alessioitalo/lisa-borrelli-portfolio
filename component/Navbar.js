@@ -4,25 +4,29 @@ import styles from './Navbar.module.css';
 
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
-  const [transparentNavbar, setTransparentNavbar] = useState(true)
+  const [transparentNavbar, setTransparentNavbar] = useState(true);
 
-  const changeNavbarColor = () =>{
-    if(window.scrollY >= 80){
+  const changeNavbarColor = () => {
+    if (window.scrollY >= 80) {
       setTransparentNavbar(false);
-    }
-    else{
+    } else {
       setTransparentNavbar(true);
     }
- };
+  };
 
- useEffect(()=>{
-  window.addEventListener('scroll', changeNavbarColor);
- }, transparentNavbar)
+  useEffect(() => {
+    document.addEventListener('scroll', changeNavbarColor);
+    return () => {
+      document.removeEventListener('scroll', changeNavbarColor);
+    };
+  }, [transparentNavbar]);
 
   return (
     <>
       {showModal && <Modal />}
-      <nav className={`${styles.nav} ${transparentNavbar && styles.transparent}`}>
+      <nav
+        className={`${styles.nav} ${transparentNavbar && styles.transparent}`}
+      >
         <span className={styles.info}>
           <span className={styles.name}>Lisa Borrelli</span>
           <span className={styles.detail}>DIGITAL & GRAPHIC DESIGNER</span>

@@ -1,6 +1,6 @@
 import Layout from '../component/Layout';
 import Dots from '../component/Dots';
-import Interest from '../component/Interest';
+// import Interest from '../component/Interest';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from './About.module.css';
@@ -28,9 +28,21 @@ const about = () => {
         <div className={styles.container}>
           <div className={styles.bio}>
             <Dots />
-            Ciao, I am Lisa Borrelli and I am based in London. My aim is to use
-            my variety of skills to help businesses grow with visual impactful
-            design.
+            <p>
+              Ciao, I am Lisa Borrelli and I am a Digital & Graphic Designer
+              based in London. During my 5+ years of experience creating digital
+              assets for websites, printing branded POS material, art direction
+              for seasonal campaigns and developing user interfaces designs.{' '}
+            </p>
+            <p>
+              New challanges lead me to new ideas and travelling is one my
+              source of inspiration. I love visiting museums and exploring
+              London in my spare time, but I also enjoy blinge watching series.
+            </p>
+            <p>
+              My aim is to use my variety of skills to help businesses grow with
+              visual impactful design.{' '}
+            </p>
           </div>
         </div>
         <div className={styles.container}>
