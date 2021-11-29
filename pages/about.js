@@ -12,7 +12,7 @@ import drink from '../public/drink.svg';
 import aboutImg from '../public/about.svg';
 import { useState } from 'react';
 
-const about = () => {
+const About = () => {
   const [showTravel, setShowTravel] = useState(false);
   const [showMusic, setShowMusic] = useState(false);
   const [showDrink, setShowDrink] = useState(false);
