@@ -1,11 +1,10 @@
-import styles from './CarouselItem.module.css'
+import styles from './CarouselItem.module.css';
 
-const CarouselItem = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+const CarouselItem = ({ src }) => {
+  return (
+    <div className={styles.item} style={{backgroundImage: `url("https:${src}")`}} />
+//   <img src={`https://${src}`} className={styles.item}/>
+    );
+};
 
-export default CarouselItem
+export default CarouselItem;

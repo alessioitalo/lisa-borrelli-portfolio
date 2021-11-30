@@ -1,20 +1,71 @@
-.carousel{
-    /* width: 300vw;
-    overflow: hidden; */
+.carousel {
+  width: 100%;
+  height: 100vh;
+  background: white;
+  color: black;
+  position: relative;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.title div span {
+  background-color: #fe5f55;
+}
+
+.arrows{
     width: 100%;
-    height: 100vh;
-    background: white;
-    color: black;
-}
-
-.title{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem 0;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    padding: 0 1rem;
 }
 
-.title div span{
-    background-color: #fe5f55;
+.arrow {
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  background-color: transparent !important;
+  max-width: 50px;
+  max-height: 50px;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+.arrow:hover{
+  transform: scale(1.4);
+}
+
+.left {
+  border-right: 30px solid #fe5f55;
+}
+
+.right {
+  border-left: 30px solid #fe5f55;
+}
+
+.container {
+  display: flex;
+  padding: 2rem 0;
+  overflow: hidden;
+  height: 80vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+  
+  /* width: 50%;
+  position: relative;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; */
+
 }

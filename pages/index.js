@@ -58,7 +58,7 @@ export default function Home({ projects }) {
             <Image src={photo} />
           </div>
         </div>
-        <Carousel />
+        <Carousel projects={projects} />
         
         {/* {projects.map((project) => {
           return (
