@@ -5,22 +5,20 @@ import { useState } from 'react';
 
 const Carousel = ({ projects }) => {
   const [counter, setCounter] = useState(0);
-  const [animation, setAnimation] = useState(false)
+  const [animation, setAnimation] = useState(false);
 
   const nextImage = () => {
-    if (counter >= projects.length -1){
-      setCounter(0)
-    }
-    else{
+    if (counter >= projects.length - 1) {
+      setCounter(0);
+    } else {
       setCounter(counter + 1);
     }
   };
 
   const previousImage = () => {
-    if (counter < 1){
+    if (counter < 1) {
       setCounter(projects.length - 1);
-    }
-    else{
+    } else {
       setCounter(counter - 1);
     }
   };
@@ -40,10 +38,7 @@ const Carousel = ({ projects }) => {
             onClick={nextImage}
           />
         </div>
-        <div
-          className={styles.container}
-          style={{ width: `calc(${projects.length} * 100vw)` }}
-        >
+        <div className={styles.container}>
           {/* {projects.map((project) => {
             return (
               <CarouselItem
