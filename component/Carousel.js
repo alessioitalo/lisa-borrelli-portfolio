@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 const Carousel = ({ projects }) => {
   const [counter, setCounter] = useState(0);
-  const [animation, setAnimation] = useState(false);
+  // const [animation, setAnimation] = useState(false);
 
   const nextImage = () => {
     if (counter >= projects.length - 1) {
@@ -49,6 +49,7 @@ const Carousel = ({ projects }) => {
           })} */}
           <CarouselItem
             src={projects[counter].fields.mainImage.fields.file.url}
+            // animation={animation}
           />
           {/* <h1>{counter}</h1> */}
         </div>

@@ -8,7 +8,7 @@ import styles from './InterestsList.module.css';
 import Image from 'next/image';
 
 const InterestsList = () => {
-  const [showTravel, setShowTravel] = useState(false);
+  const [showTravel, setShowTravel] = useState(true);
   const [showMusic, setShowMusic] = useState(false);
   const [showDrink, setShowDrink] = useState(false);
   const [showPhoto, setShowPhoto] = useState(false);

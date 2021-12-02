@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Modal from './Modal';
 import styles from './Navbar.module.css';
 
+
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
   const [transparentNavbar, setTransparentNavbar] = useState(true);
@@ -14,6 +15,10 @@ const Navbar = () => {
     }
   };
 
+  const modalHandler = () => {
+    setShowModal(!showModal);
+  };
+
   useEffect(() => {
     document.addEventListener('scroll', changeNavbarColor);
     return () => {
@@ -23,7 +28,7 @@ const Navbar = () => {
 
   return (
     <>
-      {showModal && <Modal />}
+      {showModal && <Modal modalHandler={modalHandler} />}
       <nav
         className={`${styles.nav} ${transparentNavbar && styles.transparent}`}
       >
@@ -31,10 +36,7 @@ const Navbar = () => {
           <span className={styles.name}>Lisa Borrelli</span>
           <span className={styles.detail}>DIGITAL & GRAPHIC DESIGNER</span>
         </span>
-        <span
-          className={styles.hamburger}
-          onClick={() => setShowModal(!showModal)}
-        >
+        <span className={styles.hamburger} onClick={modalHandler}>
           <span
             className={`${styles.line} ${showModal ? styles.animated : null}`}
           />
