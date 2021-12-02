@@ -5,19 +5,11 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styles from './About.module.css';
 import skills from '../public/skills.svg';
-// import music from '../public/music.svg';
-// import camera from '../public/camera.svg';
-// import travel from '../public/travel.svg';
-// import drink from '../public/drink.svg';
 import aboutImg from '../public/about.svg';
 import InterestsList from '../component/InterestsList';
-// import { useState } from 'react';
 
 const about = () => {
-  // const [showTravel, setShowTravel] = useState(false);
-  // const [showMusic, setShowMusic] = useState(false);
-  // const [showDrink, setShowDrink] = useState(false);
-  // const [showPhoto, setShowPhoto] = useState(false);
+
   return (
     <>
       <Head>
@@ -90,59 +82,6 @@ const about = () => {
             <Dots />
           </div>
           <InterestsList />
-          {/* <div className={styles.icons}>
-            <Image
-              src={travel}
-              id='travel'
-              className={styles.icon}
-              onMouseEnter={() => {
-                setShowTravel(true);
-              }}
-              onMouseLeave={() => {
-                setShowTravel(false);
-              }}
-            />
-            {showTravel && <Interest type={'travel'}>I love traveling! </Interest>}
-            <Image
-              src={music}
-              className={styles.icon}
-              onMouseEnter={() => {
-                setShowMusic(true);
-              }}
-              onMouseLeave={() => {
-                setShowMusic(false);
-              }}
-            />
-            {showMusic && (
-              <Interest type={'music'}>I love listening to Rock music! </Interest>
-            )}
-            <Image
-              src={camera}
-              className={styles.icon}
-              onMouseEnter={() => {
-                setShowPhoto(true);
-              }}
-              onMouseLeave={() => {
-                setShowPhoto(false);
-              }}
-            />
-            {showPhoto && (
-              <Interest type={'photo'}>I love taking pictures! </Interest>
-            )}
-            <Image
-              src={drink}
-              className={styles.icon}
-              onMouseEnter={() => {
-                setShowDrink(true);
-              }}
-              onMouseLeave={() => {
-                setShowDrink(false);
-              }}
-            />
-            {showDrink && (
-              <Interest type={'drink'}>I love a glass of red wine! </Interest>
-            )}
-          </div> */}
         </div>
       </Layout>
     </>
