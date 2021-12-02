@@ -64,7 +64,7 @@ const about = () => {
               <span className={styles.skill} id='photography'></span>
             </div>
             <div>
-              <label htmlFor='photography'>PHOTOGRAPHY</label>
+              <label htmlFor='photography'>MAILCHIMP</label>
               <span className={styles.skill} id='mailchimp'></span>
             </div>
             <div>

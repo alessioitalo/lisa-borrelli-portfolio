@@ -44,7 +44,7 @@
   font-size: 1.2rem;
   padding: 0 2rem;
   font-weight: bold;
-  line-height: 3rem;
+  line-height: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -70,11 +70,22 @@
   justify-content: space-between;
 }
 
+.skills label{
+  width: 20%;
+  text-align: right;
+}
+
 .skill {
-  width: 60%;
+  width: 75%;
   height: 1rem;
   border-radius: 10px;
   border: 1px dotted #fe5f55;
+}
+
+@media (max-width: 950px){
+  .skills{
+    width:80%;
+  }
 }
 
 
@@ -100,18 +111,11 @@
 
   .skills {
     width: 100%;
+    font-size: 0.6rem;
   }
 
   .skills progress {
     width: 50%;
   }
-  /* .icons {
-    padding: 2rem 0;
-    width: 100%;
-  }
 
-  .icons img {
-    padding: 0;
-    min-width: 90% !important;
-  } */
 }
