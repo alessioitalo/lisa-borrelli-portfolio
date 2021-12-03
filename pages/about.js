@@ -1,7 +1,7 @@
 import Layout from '../component/Layout';
 import Dots from '../component/Dots';
 // import Interest from '../component/Interest';
-import Head from 'next/head';
+// import Head from 'next/head';
 import Image from 'next/image';
 import styles from './About.module.css';
 import skills from '../public/skills.svg';

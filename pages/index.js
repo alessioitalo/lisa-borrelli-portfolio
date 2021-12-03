@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Layout from '../component/Layout';
-import Head from 'next/head';
+// import Head from 'next/head';
 import Dots from '../component/Dots';
 import styles from './Index.module.css';
 import photo from '../public/photo.svg';

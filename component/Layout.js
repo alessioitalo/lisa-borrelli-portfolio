@@ -5,6 +5,8 @@ import { faBehance } from '@fortawesome/free-brands-svg-icons';
 import { faDribbble } from '@fortawesome/free-brands-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import Navbar from './Navbar';
+import photo from '../public/photo.svg';
+
 
 const Layout = ({ children }) => {
   return (
