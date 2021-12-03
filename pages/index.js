@@ -39,7 +39,7 @@ const writer = (
 export default function Home({ projects }) {
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>Lisa Borrelli</title>
         <meta
           name='description'
@@ -49,7 +49,7 @@ export default function Home({ projects }) {
         <meta property="og:type" content="website" />
         <meta property="og:image" content={photo} />
         <link rel='icon' href='/favicon.ico' />
-      </Head>
+      </Head> */}
       <Layout>
         <div className={styles.splash}>
           <div className={styles.halfSplash}>
