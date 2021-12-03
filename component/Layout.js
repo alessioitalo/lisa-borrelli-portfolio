@@ -17,7 +17,10 @@ const Layout = ({ children }) => {
         <meta property='og:url' content='www.lisa-borrelli.com' />
         <meta property='og:type' content='website' />
         {/* <meta property="og:image" content="http://f97b-2a02-c7f-d493-1300-7c0c-4f4f-efaf-9be4.ngrok.io/preview.jpg" /> */}
-        <meta property='og:image' content={`${router.pathname}/preview.jpg`} />
+        <meta
+          property='og:image'
+          content='https://lisa-portfolio-aq8ca67ic-alessioitalo.vercel.app/preview.jpg'
+        />
         <meta
           property='og:description'
           content='Digital and Graphic Designer based in London, UK.'
