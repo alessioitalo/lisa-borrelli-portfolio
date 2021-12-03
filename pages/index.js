@@ -45,6 +45,9 @@ export default function Home({ projects }) {
           name='description'
           content='Digital and Graphic Designer based in London, UK.'
         />
+        <meta property="og:url" content="www.lisa-borrelli.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={photo} />
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Layout>
