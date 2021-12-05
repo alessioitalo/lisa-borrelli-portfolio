@@ -3,6 +3,10 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
 const ContactForm = () => {
+  const test = () => {
+    console.log('afasasfasf');
+  };
+
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -17,10 +21,31 @@ const ContactForm = () => {
       message: Yup.string().required('Please enter your message.'),
     }),
     onSubmit: () => {
-      console.log('form submitted');
-      console.log(formik.values.name);
+      formSubmitHandler();
     },
   });
+
+  const formSubmitHandler = async () => {
+    console.log('formSubmitHandler fired...')
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application.json, text/pain, */*',
+      },
+      body: JSON.stringify({
+        name: formik.values.name,
+        email: formik.values.email,
+        message: formik.values.message,
+      }),
+    });
+    console.log(response);
+    if (response.ok) {
+      console.log('request sent!');
+    } else {
+      console.log('error');
+    }
+  };
 
   return (
     <form className={styles.form} onSubmit={formik.handleSubmit}>
