@@ -1,13 +1,10 @@
 import Head from 'next/head';
 import styles from './Layout.module.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBehance } from '@fortawesome/free-brands-svg-icons';
-import { faDribbble } from '@fortawesome/free-brands-svg-icons';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import Navbar from './Navbar';
+import { BsInstagram, BsDribbble, BsBehance } from 'react-icons/bs';
+import Link from 'next/link';
 
 const Layout = ({ children }) => {
-
   return (
     <>
       <Head>
@@ -32,9 +29,18 @@ const Layout = ({ children }) => {
       <footer className={styles.footer}>
         ©2021 Lisa Borrelli
         <div className={styles.icons}>
-          <FontAwesomeIcon icon={faBehance} />
+          {/* <FontAwesomeIcon icon={faBehance} />
           <FontAwesomeIcon icon={faInstagram} />
-          <FontAwesomeIcon icon={faDribbble} />
+          <FontAwesomeIcon icon={faDribbble} /> */}
+          <Link href='https://www.instagram.com/lisaborrelli90/'>
+            <BsInstagram />
+          </Link>
+          <Link href='https://www.behance.net/lisab90'>
+            <BsBehance />
+          </Link>
+          <Link href='https://dribbble.com/Lisab901'>
+            <BsDribbble />
+          </Link>
         </div>
       </footer>
     </>
