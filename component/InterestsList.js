@@ -16,7 +16,7 @@ const InterestsList = () => {
     <div className={styles.icons}>
       <Image
         src={travel}
-        id='travel'
+        alt='travel icon'
         className={styles.icon}
         onMouseEnter={() => {
           setShowTravel(true);
@@ -28,6 +28,7 @@ const InterestsList = () => {
       {showTravel && <Interest type={'travel'}>I love traveling! </Interest>}
       <Image
         src={music}
+        alt='music icon'
         className={styles.icon}
         onMouseEnter={() => {
           setShowMusic(true);
@@ -41,6 +42,7 @@ const InterestsList = () => {
       )}
       <Image
         src={camera}
+        alt='photo icon'
         className={styles.icon}
         onMouseEnter={() => {
           setShowPhoto(true);
@@ -54,6 +56,7 @@ const InterestsList = () => {
       )}
       <Image
         src={drink}
+        alt='drink icon'
         className={styles.icon}
         onMouseEnter={() => {
           setShowDrink(true);

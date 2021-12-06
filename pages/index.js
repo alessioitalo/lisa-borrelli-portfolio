@@ -1,12 +1,12 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import Layout from '../component/Layout';
-// import Head from 'next/head';
 import Dots from '../component/Dots';
 import styles from './Index.module.css';
 import photo from '../public/photo.svg';
 import { createClient } from 'contentful';
 import Typewriter from 'typewriter-effect';
-import Carousel from '../component/Carousel';
+import Carousel from 'nuka-carousel';
 
 export async function getStaticProps() {
   const client = createClient({
@@ -37,19 +37,9 @@ const writer = (
 );
 
 export default function Home({ projects }) {
+  // console.log(projects[0]);
   return (
     <>
-      {/* <Head>
-        <title>Lisa Borrelli</title>
-        <meta
-          name='description'
-          content='Digital and Graphic Designer based in London, UK.'
-        />
-        <meta property="og:url" content="www.lisa-borrelli.com" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content={photo} />
-        <link rel='icon' href='/favicon.ico' />
-      </Head> */}
       <Layout>
         <div className={styles.splash}>
           <div className={styles.halfSplash}>
@@ -58,25 +48,57 @@ export default function Home({ projects }) {
             <h4>{writer}</h4>
           </div>
           <div className={styles.halfSplash}>
-            <Image src={photo} />
+            <Image src={photo} alt='profile picture' />
           </div>
         </div>
-        <Carousel projects={projects} />
-        
-        {/* {projects.map((project) => {
-          return (
-            <div key={project.sys.id} className='image'>
-              <div className='main-project-overlay' />
-              <Image
-                className='main-project-img'
-                src={`https:${project.fields.mainImage.fields.file.url}`}
-                layout='fill'
-                objectFit='cover'
-              />
-            </div>
-          );
-        })} */}
+        <div className={styles.title} />
+        <h1>My Projects</h1>
+        <Dots />
+        <Carousel
+          initialSlideHeight={1000}
+          className={styles.carousel}
+          nextButtonClassName={styles.rightArrow}
+          prevButtonClassName={styles.leftArrow}
+        >
+          {projects.map((project) => {
+            return (
+              <div
+                style={{ height: '100%', width: '100%', position: 'relative' }}
+                key={project.sys.id}
+              >
+                <Link href={`/${project.fields.url}`}>
+                  <a>
+                    <Image
+                      src={`https:${project.fields.mainImage.fields.file.url}`}
+                      layout='fill'
+                    />
+                  </a>
+                </Link>
+              </div>
+            );
+
+            {
+              /* return ( */
+            }
+            {
+              /* <div
+                className={styles.slide}
+                key={project.sys.id}
+                style={{
+                  backgroundImage: `url(https:${project.fields.mainImage.fields.file.url})`,
+                }}
+              >
+                {projects.indexOf(project)}
+              </div> */
+            }
+            {
+              /* ); */
+            }
+          })}
+        </Carousel>
       </Layout>
+      {/* <Carousel projects={projects} /> */}
+      {/* src={`https:${project.fields.mainImage.fields.file.url}`} */}
     </>
   );
 }
