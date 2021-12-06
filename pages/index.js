@@ -7,6 +7,10 @@ import photo from '../public/photo.svg';
 import { createClient } from 'contentful';
 import Typewriter from 'typewriter-effect';
 import Carousel from 'nuka-carousel';
+import {
+  BsFillArrowLeftCircleFill,
+  BsFillArrowRightCircleFill,
+} from 'react-icons/bs';
 
 export async function getStaticProps() {
   const client = createClient({
@@ -51,14 +55,19 @@ export default function Home({ projects }) {
             <Image src={photo} alt='profile picture' />
           </div>
         </div>
-        <div className={styles.title} />
-        <h1>My Projects</h1>
-        <Dots />
+        <div className={styles.title}>
+          <h1>My Projects</h1>
+          <Dots />
+        </div>
         <Carousel
           initialSlideHeight={1000}
           className={styles.carousel}
-          nextButtonClassName={styles.rightArrow}
-          prevButtonClassName={styles.leftArrow}
+          renderCenterLeftControls={({ previousSlide }) => (
+            <BsFillArrowLeftCircleFill className={`${styles.arrow} ${styles.left}`} onClick={previousSlide} />
+          )}
+          renderCenterRightControls={({ nextSlide }) => (
+            <BsFillArrowRightCircleFill className={`${styles.arrow} ${styles.right}`} onClick={nextSlide} />
+          )}
         >
           {projects.map((project) => {
             return (
@@ -71,34 +80,15 @@ export default function Home({ projects }) {
                     <Image
                       src={`https:${project.fields.mainImage.fields.file.url}`}
                       layout='fill'
+                      alt='project preview'
                     />
                   </a>
                 </Link>
               </div>
             );
-
-            {
-              /* return ( */
-            }
-            {
-              /* <div
-                className={styles.slide}
-                key={project.sys.id}
-                style={{
-                  backgroundImage: `url(https:${project.fields.mainImage.fields.file.url})`,
-                }}
-              >
-                {projects.indexOf(project)}
-              </div> */
-            }
-            {
-              /* ); */
-            }
           })}
         </Carousel>
       </Layout>
-      {/* <Carousel projects={projects} /> */}
-      {/* src={`https:${project.fields.mainImage.fields.file.url}`} */}
     </>
   );
 }

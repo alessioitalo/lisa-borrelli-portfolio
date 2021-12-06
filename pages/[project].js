@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import styles from './Project.module.css';
 import Layout from '../component/Layout';
 import { createClient } from 'contentful';
 
@@ -22,10 +23,10 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({params}) => {
+export const getStaticProps = async ({ params }) => {
   const response = await client.getEntries({
     content_type: 'project',
-    'fields.url': params.project
+    'fields.url': params.project,
   });
 
   return {
@@ -36,16 +37,23 @@ export const getStaticProps = async ({params}) => {
 };
 
 const project = ({ project }) => {
-  console.log(project);
+  //   console.log(project);
   return (
     <Layout>
-      <div style={{ padding: '10rem 2rem' }}>{project.fields.description}</div>
-      <div>
-        <Image
-          src={`https:${project.fields.mainImage.fields.file.url}`}
-          width='500'
-          height='400'
-        />
+      <div className={styles.container}>
+        <div
+          className={styles.mainImage}
+          style={{
+            backgroundImage: `url(https:${project.fields.mainImage.fields.file.url})`,
+          }}
+        >
+          <div className={styles.mainOverlay} />
+          {/* <Image
+            src={`https:${project.fields.mainImage.fields.file.url}`}
+            layout='fill'
+          /> */}
+        </div>
+        <div className={styles.description}>{project.fields.description}</div>
       </div>
     </Layout>
   );
