@@ -59,10 +59,40 @@ export default function Home({ projects }) {
           <Dots />
         </div>
         <Carousel
-        height='1000'
-          // initialSlideHeight={1000}
-          // className={styles.carousel}
+          heightMode='first'
+          framePadding='20px'
+          renderCenterLeftControls={({ previousSlide }) => (
+            <BsFillArrowLeftCircleFill
+              className={`${styles.arrow} ${styles.left}`}
+              onClick={previousSlide}
+            />
+          )}
+          renderCenterRightControls={({ nextSlide }) => (
+            <BsFillArrowRightCircleFill
+              className={`${styles.arrow} ${styles.right}`}
+              onClick={nextSlide}
+            />
+          )}
+        >
+          {projects.map((project) => (
+            <img
+              src={`https:${project.fields.mainImage.fields.file.url}`}
+              alt='project preview'
+              key={project.sys.id}
+            />
+          ))}
+        </Carousel>
+      </Layout>
+    </>
+  );
+}
 
+{
+  /* <Carousel
+          // initialSlideHeight=''
+          // heightMode='first'
+          // autoplay='true'
+          // framePadding='10px'
           renderCenterLeftControls={({ previousSlide }) => (
             <BsFillArrowLeftCircleFill
               className={`${styles.arrow} ${styles.left}`}
@@ -79,26 +109,32 @@ export default function Home({ projects }) {
           {projects.map((project) => {
             return (
               <div
-                style={{ height: '100%', width: '100%', position: 'relative' }}
+                style={{
+                  height: '100%',
+                  width: '100%',
+                  position: 'relative',
+                }}
                 key={project.sys.id}
               >
-                <Link href={`/${project.fields.url}`}>
+                <Link href={`/${project.fields.url}`} key={project.sys.id}>
                   <a>
-                    <div className={styles.carouselImage}>
-                      <Image
+                    {/* <Image
                         src={`https:${project.fields.mainImage.fields.file.url}`}
                         width='1920'
                         height='1080'
+                        // layout='fill'
                         alt='project preview'
-                      />
-                    </div>
+                      /> */
+}
+{
+  /* <img
+                      className={styles.carouselImage}
+                      src={`https:${project.fields.mainImage.fields.file.url}`}
+                    />
                   </a>
                 </Link>
               </div>
             );
           })}
-        </Carousel>
-      </Layout>
-    </>
-  );
+        </Carousel> */
 }
