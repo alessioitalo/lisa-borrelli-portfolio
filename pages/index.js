@@ -59,13 +59,21 @@ export default function Home({ projects }) {
           <Dots />
         </div>
         <Carousel
-          initialSlideHeight={1000}
-          className={styles.carousel}
+        height='1000'
+          // initialSlideHeight={1000}
+          // className={styles.carousel}
+
           renderCenterLeftControls={({ previousSlide }) => (
-            <BsFillArrowLeftCircleFill className={`${styles.arrow} ${styles.left}`} onClick={previousSlide} />
+            <BsFillArrowLeftCircleFill
+              className={`${styles.arrow} ${styles.left}`}
+              onClick={previousSlide}
+            />
           )}
           renderCenterRightControls={({ nextSlide }) => (
-            <BsFillArrowRightCircleFill className={`${styles.arrow} ${styles.right}`} onClick={nextSlide} />
+            <BsFillArrowRightCircleFill
+              className={`${styles.arrow} ${styles.right}`}
+              onClick={nextSlide}
+            />
           )}
         >
           {projects.map((project) => {
@@ -76,11 +84,14 @@ export default function Home({ projects }) {
               >
                 <Link href={`/${project.fields.url}`}>
                   <a>
-                    <Image
-                      src={`https:${project.fields.mainImage.fields.file.url}`}
-                      layout='fill'
-                      alt='project preview'
-                    />
+                    <div className={styles.carouselImage}>
+                      <Image
+                        src={`https:${project.fields.mainImage.fields.file.url}`}
+                        width='1920'
+                        height='1080'
+                        alt='project preview'
+                      />
+                    </div>
                   </a>
                 </Link>
               </div>

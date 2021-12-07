@@ -29,17 +29,20 @@ const Layout = ({ children }) => {
       <footer className={styles.footer}>
         ©2021 Lisa Borrelli
         <div className={styles.icons}>
-          {/* <FontAwesomeIcon icon={faBehance} />
-          <FontAwesomeIcon icon={faInstagram} />
-          <FontAwesomeIcon icon={faDribbble} /> */}
           <Link href='https://www.instagram.com/lisaborrelli90/'>
-            <BsInstagram />
+            <a>
+              <BsInstagram />
+            </a>
           </Link>
           <Link href='https://www.behance.net/lisab90'>
-            <BsBehance />
+            <a href='https://www.behance.net/lisab90'>
+              <BsBehance />
+            </a>
           </Link>
           <Link href='https://dribbble.com/Lisab901'>
-            <BsDribbble />
+            <a>
+              <BsDribbble />
+            </a>
           </Link>
         </div>
       </footer>
