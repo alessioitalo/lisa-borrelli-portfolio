@@ -41,7 +41,6 @@ const writer = (
 );
 
 export default function Home({ projects }) {
-  // console.log(projects[0]);
   return (
     <>
       <Layout>
@@ -52,7 +51,7 @@ export default function Home({ projects }) {
             <h4>{writer}</h4>
           </div>
           <div className={styles.halfSplash}>
-            <Image src={photo} alt='profile picture' />
+            <Image src={photo} loading='eager' alt='profile picture' />
           </div>
         </div>
         <div className={styles.title}>

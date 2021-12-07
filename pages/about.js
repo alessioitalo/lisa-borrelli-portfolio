@@ -13,7 +13,7 @@ const about = () => {
     <>
       <Layout>
         <div className={styles.container}>
-          <Image src={aboutImg} alt=''/>
+          <Image src={aboutImg} loading='eager' alt=''/>
         </div>
         <div className={styles.container}>
           <div className={styles.bio}>
