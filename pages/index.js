@@ -75,11 +75,12 @@ export default function Home({ projects }) {
           )}
         >
           {projects.map((project) => (
-            <img
-              src={`https:${project.fields.mainImage.fields.file.url}`}
-              alt='project preview'
-              key={project.sys.id}
-            />
+            <Link href={`/${project.fields.url}`} key={project.sys.id}>
+              <img
+                src={`https:${project.fields.mainImage.fields.file.url}`}
+                alt='project preview'
+              />
+            </Link>
           ))}
         </Carousel>
       </Layout>
