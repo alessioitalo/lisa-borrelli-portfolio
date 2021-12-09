@@ -37,7 +37,6 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const project = ({ project }) => {
-  //   console.log(project);
   return (
     <Layout>
       <div className={styles.container}>
@@ -47,14 +46,28 @@ const project = ({ project }) => {
             backgroundImage: `url(https:${project.fields.mainImage.fields.file.url})`,
           }}
         >
-          <div className={styles.mainOverlay} />
+          {/* <div className={styles.mainOverlay} /> */}
           {/* <Image
             src={`https:${project.fields.mainImage.fields.file.url}`}
             layout='fill'
           /> */}
         </div>
-        <div className={styles.description}>{project.fields.description}</div>
+        <div className={styles.description}>
+          <h1>{project.fields.description.content[0].content[0].value}</h1>
+          <h3>{project.fields.description.content[1].content[0].value}</h3>
+          <p>{project.fields.description.content[2].content[0].value}</p>
+        </div>
+        {project.fields.images.map((image) => {
+          return (
+            <img
+              src={`https:${image.fields.file.url}`}
+              key={image.fields.file.fileName}
+              style={{width: '100%', overflow: 'hidden'}}
+            />
+          );
+        })}
       </div>
+      {/* <Image src={`https:${image.fields.file.url}`} width='1000' height='800' /> */}
     </Layout>
   );
 };

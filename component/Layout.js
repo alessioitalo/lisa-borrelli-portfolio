@@ -24,7 +24,9 @@ const Layout = ({ children }) => {
       </Head>
       <main>
         <Navbar />
-        <main className={styles.content}>{children}</main>
+        <main className={styles.content}>
+          {children}
+        </main>
       </main>
       <footer className={styles.footer}>
         ©2021 Lisa Borrelli
