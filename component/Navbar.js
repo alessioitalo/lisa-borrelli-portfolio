@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Modal from './Modal';
 import styles from './Navbar.module.css';
-
+import Link from 'next/link';
 
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
@@ -32,10 +32,12 @@ const Navbar = () => {
       <nav
         className={`${styles.nav} ${transparentNavbar && styles.transparent}`}
       >
-        <span className={styles.info}>
-          <span className={styles.name}>Lisa Borrelli</span>
-          <span className={styles.detail}>DIGITAL & GRAPHIC DESIGNER</span>
-        </span>
+        <Link href='/'>
+          <a className={styles.info}>
+            <span className={styles.name}>Lisa Borrelli</span>
+            <span className={styles.detail}>DIGITAL & GRAPHIC DESIGNER</span>
+          </a>
+        </Link>
         <span className={styles.hamburger} onClick={modalHandler}>
           <span
             className={`${styles.line} ${showModal ? styles.animated : null}`}
