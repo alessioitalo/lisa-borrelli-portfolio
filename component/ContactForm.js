@@ -41,10 +41,10 @@ const ContactForm = () => {
     };
     emailjs
       .send(
-        NEXT_PUBLIC_SERVICEID,
-        NEXT_PUBLIC_TEMPLATEID,
+        process.env.NEXT_PUBLIC_SERVICEID,
+        process.env.NEXT_PUBLIC_TEMPLATEID,
         formData,
-        NEXT_PUBLIC_EMAIL_USERID
+        process.env.NEXT_PUBLIC_EMAIL_USERID
       )
       .then(
         (result) => {
@@ -56,28 +56,6 @@ const ContactForm = () => {
           setEmailError(true);
         }
       );
-
-    // setEmailSent(true);
-    // setEmailError(true)
-
-    // const response = await fetch('/api/contact', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     Accept: 'application.json, text/pain, */*',
-    //   },
-    //   body: JSON.stringify({
-    //     name: formik.values.name,
-    //     email: formik.values.email,
-    //     message: formik.values.message,
-    //   }),
-    // });
-    // console.log(response);
-    // if (response.ok) {
-    //   console.log('request sent!');
-    // } else {
-    //   console.log('error');
-    // }
   };
 
   return (
@@ -138,7 +116,7 @@ const ContactForm = () => {
           <span>
             Looks like something went wrong. Try clicking{' '}
             <a
-              href={`mailto:${NEXT_PUBLIC_EMAIL_ADDRESS}`}
+              href={`mailto:${process.env.NEXT_PUBLIC_EMAIL_ADDRESS}`}
               style={{
                 margin: '0 5px',
                 textDecoration: 'underline',
