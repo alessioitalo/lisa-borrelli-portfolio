@@ -1,6 +1,8 @@
 .container {
   width: 100%;
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
 .mainImage {
@@ -35,10 +37,19 @@
   line-height: 0;
 }
 
-.imagesContainer img{
+.imagesContainer img {
   width: 100%;
 }
 
+.top {
+  background-color: #fe5f55;
+  padding: 0.5rem 0.75rem 0.25rem;
+  border-radius: 10px;
+  align-self: flex-end;
+  margin: 1rem;
+  cursor: pointer;
+  font-size: 2rem;
+}
 
 @media (max-width: 800px) {
   .mainImage {

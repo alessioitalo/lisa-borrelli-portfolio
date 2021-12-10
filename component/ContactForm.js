@@ -23,7 +23,7 @@ const ContactForm = () => {
     }),
     onSubmit: () => {
       formSubmitHandler();
-      formik.resetForm();
+      // formik.resetForm();
     },
   });
 
@@ -40,7 +40,7 @@ const ContactForm = () => {
     };
     console.log(formData);
     setEmailSent(true);
-    // setEmailError(true);
+    // setEmailError(true)
 
     // const response = await fetch('/api/contact', {
     //   method: 'POST',

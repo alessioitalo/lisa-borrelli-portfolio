@@ -1,12 +1,17 @@
 import styles from './ContactFormMessage.module.css';
 import { FaWindowClose } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 const ContactFormMessage = ({ children, type, popupHandler }) => {
   return (
-    <div className={`${styles.message} ${styles[type]}`}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className={`${styles.message} ${styles[type]}`}
+    >
       <FaWindowClose className={styles.close} onClick={popupHandler} />
       {children}
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,4 +1,5 @@
-import Image from 'next/image';
+import { BiArrowToTop } from 'react-icons/bi';
+import {GrLinkTop} from 'react-icons/gr'
 import styles from './Project.module.css';
 import Layout from '../component/Layout';
 import { createClient } from 'contentful';
@@ -68,6 +69,11 @@ const project = ({ project }) => {
               />
             );
           })}
+        </div>
+        <div className={styles.top}>
+          <a href='#top'>
+            <BiArrowToTop />
+          </a>
         </div>
       </div>
     </Layout>
