@@ -3,6 +3,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useState } from 'react';
 import ContactFormMessage from './ContactFormMessage';
+import emailjs from 'emailjs-com';
 
 const ContactForm = () => {
   const [emailSent, setEmailSent] = useState(false);
@@ -23,7 +24,7 @@ const ContactForm = () => {
     }),
     onSubmit: () => {
       formSubmitHandler();
-      // formik.resetForm();
+      formik.resetForm();
     },
   });
 
@@ -38,8 +39,25 @@ const ContactForm = () => {
       email: formik.values.email,
       message: formik.values.message,
     };
-    console.log(formData);
-    setEmailSent(true);
+    emailjs
+      .send(
+        NEXT_PUBLIC_SERVICEID,
+        NEXT_PUBLIC_TEMPLATEID,
+        formData,
+        NEXT_PUBLIC_EMAIL_USERID
+      )
+      .then(
+        (result) => {
+          console.log(result);
+          setEmailSent(true);
+        },
+        (error) => {
+          console.log(error);
+          setEmailError(true);
+        }
+      );
+
+    // setEmailSent(true);
     // setEmailError(true)
 
     // const response = await fetch('/api/contact', {
@@ -120,7 +138,7 @@ const ContactForm = () => {
           <span>
             Looks like something went wrong. Try clicking{' '}
             <a
-              href='mailto:lisaborrelli@outlook.com'
+              href={`mailto:${NEXT_PUBLIC_EMAIL_ADDRESS}`}
               style={{
                 margin: '0 5px',
                 textDecoration: 'underline',
