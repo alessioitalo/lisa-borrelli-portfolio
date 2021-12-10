@@ -32,8 +32,11 @@
   width: 100%;
   min-height: 100vh;
   position: relative;
-  display: flex;
-  flex-direction: column;
+  line-height: 0;
+}
+
+.imagesContainer img{
+  width: 100%;
 }
 
 

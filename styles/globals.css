@@ -55,11 +55,32 @@ a {
 .circus-25 {
 }
 
-.brunell {
+.brunell img:nth-of-type(2),
+.brunell img:nth-of-type(7) {
+  width: 90%;
+  position: relative;
+  margin: 5%;
 }
+
+.brunell img:nth-of-type(5),
+.brunell img:nth-of-type(6) {
+  width: 50%;
+}
+
+.brunell img:nth-of-type(8),
+.brunell img:nth-of-type(9) {
+  width: 50%;
+  position: relative;
+  padding: 0 5% 5%;
+}
+
 
 .nurture-you {
 }
 
-.tackler {
+.tackler img:nth-of-type(2),
+.tackler img:nth-of-type(3),
+.tackler img:nth-of-type(5),
+.tackler img:nth-of-type(6) {
+  width: 50%;
 }
