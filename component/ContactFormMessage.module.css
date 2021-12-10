@@ -1,0 +1,26 @@
+.message {
+  width: 100%;
+  padding: 1rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin: 1rem 0;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.close {
+  align-self: flex-end;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.confirm {
+  background-color: hsla(118, 54%, 50%, 0.6);
+}
+
+.error {
+  background-color: hsla(0, 66%, 50%, 0.6);
+}

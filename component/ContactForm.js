@@ -1,11 +1,12 @@
 import styles from './ContactForm.module.css';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { useState } from 'react';
+import ContactFormMessage from './ContactFormMessage';
 
 const ContactForm = () => {
-  const test = () => {
-    console.log('afasasfasf');
-  };
+  const [emailSent, setEmailSent] = useState(false);
+  const [emailError, setEmailError] = useState(false);
 
   const formik = useFormik({
     initialValues: {
@@ -22,33 +23,47 @@ const ContactForm = () => {
     }),
     onSubmit: () => {
       formSubmitHandler();
+      formik.resetForm();
     },
   });
 
+  const popupHandler = () => {
+    setEmailSent(false);
+    setEmailError(false);
+  };
+
   const formSubmitHandler = async () => {
-    console.log('formSubmitHandler fired...')
-    const response = await fetch('/api/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application.json, text/pain, */*',
-      },
-      body: JSON.stringify({
-        name: formik.values.name,
-        email: formik.values.email,
-        message: formik.values.message,
-      }),
-    });
-    console.log(response);
-    if (response.ok) {
-      console.log('request sent!');
-    } else {
-      console.log('error');
-    }
+    const formData = {
+      name: formik.values.name,
+      email: formik.values.email,
+      message: formik.values.message,
+    };
+    console.log(formData);
+    setEmailSent(true);
+    // setEmailError(true);
+
+    // const response = await fetch('/api/contact', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     Accept: 'application.json, text/pain, */*',
+    //   },
+    //   body: JSON.stringify({
+    //     name: formik.values.name,
+    //     email: formik.values.email,
+    //     message: formik.values.message,
+    //   }),
+    // });
+    // console.log(response);
+    // if (response.ok) {
+    //   console.log('request sent!');
+    // } else {
+    //   console.log('error');
+    // }
   };
 
   return (
-    <form className={styles.form} onSubmit={formik.handleSubmit}>
+    <form className={styles.form} onSubmit={formik.handleSubmit} method='post'>
       <span>
         <div>
           <label htmlFor='name'>YOUR NAME</label>
@@ -95,6 +110,29 @@ const ContactForm = () => {
         />
       </span>
       <button type='submit'>SEND</button>
+      {emailSent && (
+        <ContactFormMessage type='confirm' popupHandler={popupHandler}>
+          Your email has been sent!
+        </ContactFormMessage>
+      )}
+      {emailError && (
+        <ContactFormMessage type='error' popupHandler={popupHandler}>
+          <span>
+            Looks like something went wrong. Try clicking{' '}
+            <a
+              href='mailto:lisaborrelli@outlook.com'
+              style={{
+                margin: '0 5px',
+                textDecoration: 'underline',
+                display: 'inline',
+              }}
+            >
+              here
+            </a>{' '}
+            instead.
+          </span>
+        </ContactFormMessage>
+      )}
     </form>
   );
 };
