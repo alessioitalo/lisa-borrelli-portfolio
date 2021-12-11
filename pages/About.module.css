@@ -6,6 +6,7 @@
   width: 100%;
   min-height: 100vh;
   color: #fe5f55;
+  position: relative;
 }
 
 .container:nth-of-type(2),
@@ -14,11 +15,10 @@
   color: #0a0935;
 }
 
-.container:nth-of-type(4){
+.container:nth-of-type(4) {
   background-image: url('../public/circles-bg.svg');
   background-repeat: no-repeat;
   background-position-x: right;
-  /* background-size: auto; */
 }
 
 .title {
@@ -70,7 +70,7 @@
   justify-content: space-between;
 }
 
-.skills label{
+.skills label {
   width: 20%;
   text-align: right;
 }
@@ -82,19 +82,44 @@
   border: 1px dotted #fe5f55;
 }
 
-@media (max-width: 950px){
-  .skills{
-    width:80%;
-  }
+.triangle,
+.lines {
+  position: absolute;
+  background-repeat: no-repeat;
+
 }
 
+.lines{
+  background-image: url('../public/lines.svg');
+  width: 200px;
+  height: 200px;
+  bottom: -80px;
+  right: 0px;
+  overflow: hidden;
+}
+
+.triangle {
+  width: 140px;
+  height: 140px;
+  background-size: 65px;
+  background-image: url('../public/triangles.svg');
+  background-position: bottom left;
+  left: 10px;
+  bottom: 10px;
+}
+
+@media (max-width: 950px) {
+  .skills {
+    width: 80%;
+  }
+}
 
 @media (max-width: 650px) {
   .container {
     padding: 0 1rem;
   }
 
-  .container:nth-of-type(4){
+  .container:nth-of-type(4) {
     background-size: cover;
     background-position-x: center;
   }
@@ -117,5 +142,4 @@
   .skills progress {
     width: 50%;
   }
-
 }

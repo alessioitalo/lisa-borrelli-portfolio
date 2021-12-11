@@ -1,6 +1,5 @@
 import Layout from '../component/Layout';
 import Dots from '../component/Dots';
-
 import Image from 'next/image';
 import styles from './About.module.css';
 import skills from '../public/skills.svg';
@@ -8,12 +7,11 @@ import aboutImg from '../public/about.svg';
 import InterestsList from '../component/InterestsList';
 
 const about = () => {
-
   return (
     <>
       <Layout>
         <div className={styles.container}>
-          <Image src={aboutImg} loading='eager' alt=''/>
+          <Image src={aboutImg} loading='eager' alt='' />
         </div>
         <div className={styles.container}>
           <div className={styles.bio}>
@@ -69,6 +67,7 @@ const about = () => {
           <div className={styles.skillsImage}>
             <Image src={skills} alt='skill icons' />
           </div>
+          <div className={styles.triangle} />
         </div>
         <div className={styles.container}>
           <div className={styles.title}>
@@ -76,6 +75,7 @@ const about = () => {
             <Dots />
           </div>
           <InterestsList />
+          <div className={styles.lines} />
         </div>
       </Layout>
     </>
