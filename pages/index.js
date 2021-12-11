@@ -61,6 +61,9 @@ export default function Home({ projects }) {
         <Carousel
           heightMode='first'
           framePadding='20px'
+          defaultControlsConfig={{
+            pagingDotsStyle: { fill: '#fe5f55' },
+          }}
           renderCenterLeftControls={({ previousSlide }) => (
             <BsFillArrowLeftCircleFill
               className={`${styles.arrow} ${styles.left}`}
