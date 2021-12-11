@@ -41,18 +41,53 @@
   width: 100%;
 }
 
+.buttonsContainer {
+  display: flex;
+  background-color: #0a0935;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttons{
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+}
+
+.buttons a, .top{
+  background-color: #fe5f55;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.buttons a{
+  padding: 1rem 0.5rem;
+  height: 100%;
+  color: white;
+}
+
 .top {
   background-color: #fe5f55;
   padding: 0.5rem 0.75rem 0.25rem;
-  border-radius: 10px;
-  align-self: flex-end;
   margin: 1rem;
-  cursor: pointer;
   font-size: 2rem;
 }
 
 @media (max-width: 800px) {
   .mainImage {
     height: 100%;
+  }
+
+  .buttons{
+    width: 80%;
+  }
+
+  .buttons a{
+    font-size: 0.8rem;
+  }
+
+  .top{
+    font-size: 1.8rem;
   }
 }

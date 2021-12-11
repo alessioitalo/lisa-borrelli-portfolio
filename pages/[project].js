@@ -1,8 +1,8 @@
 import { BiArrowToTop } from 'react-icons/bi';
-import {GrLinkTop} from 'react-icons/gr'
 import styles from './Project.module.css';
 import Layout from '../component/Layout';
 import { createClient } from 'contentful';
+import Link from 'next/dist/client/link';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -27,21 +27,31 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params }) => {
   const response = await client.getEntries({
     content_type: 'project',
-    'fields.url': params.project,
+    // 'fields.url': params.project,
   });
 
   return {
     props: {
-      project: response.items[0],
+      // project: response.items[0],
+      projects: response.items,
+      project: response.items.find(
+        (item) => item.fields.url === params.project
+      ),
     },
   };
 };
 
-{
-  /* <Image src={`https:${image.fields.file.url}`} layout='fill' /> */
-}
+const project = ({ projects, project }) => {
+  // getting slugs for previous and next project. If looking at first project, previous will be the last - if looking at the last, next will be the [0]
+  const currentIndex = projects.indexOf(
+    projects.find((item) => item.fields.url === project.fields.url)
+  );
 
-const project = ({ project }) => {
+  const previousProject =
+    projects[currentIndex - 1] || projects[projects.length - 1];
+
+  const nextProject = projects[currentIndex + 1] || projects[0];
+
   return (
     <Layout>
       <div className={styles.container}>
@@ -53,6 +63,7 @@ const project = ({ project }) => {
         >
           <div className={styles.mainOverlay} />
         </div>
+
         <div className={styles.description}>
           <h1>{project.fields.description.content[0].content[0].value}</h1>
           <h3>{project.fields.description.content[1].content[0].value}</h3>
@@ -70,10 +81,21 @@ const project = ({ project }) => {
             );
           })}
         </div>
-        <div className={styles.top}>
-          <a href='#top'>
-            <BiArrowToTop />
-          </a>
+
+        <div className={styles.buttonsContainer}>
+          <div className={styles.buttons}>
+            <Link href={`/${previousProject.fields.url}`}>
+              <a>Previous Project</a>
+            </Link>
+            <Link href={`/${nextProject.fields.url}`}>
+              <a>Next Project</a>
+            </Link>
+          </div>
+          <div className={styles.top}>
+            <a href='#top'>
+              <BiArrowToTop />
+            </a>
+          </div>
         </div>
       </div>
     </Layout>

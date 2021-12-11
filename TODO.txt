@@ -1,2 +1,0 @@
---carousel circles
---prev/next project buttons
