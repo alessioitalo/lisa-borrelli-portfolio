@@ -30,6 +30,17 @@
   color: #0a0935;
 }
 
+.video {
+  position: relative;
+  padding-top: 56.25% /* Player ratio: 100 / (1280 / 720) */
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .imagesContainer {
   width: 100%;
   min-height: 100vh;
@@ -49,19 +60,20 @@
   align-items: center;
 }
 
-.buttons{
+.buttons {
   display: flex;
   width: 50%;
   justify-content: space-around;
 }
 
-.buttons a, .top{
+.buttons a,
+.top {
   background-color: #fe5f55;
   border-radius: 10px;
   cursor: pointer;
 }
 
-.buttons a{
+.buttons a {
   padding: 1rem 0.5rem;
   height: 100%;
   color: white;
@@ -79,15 +91,15 @@
     height: 100%;
   }
 
-  .buttons{
+  .buttons {
     width: 80%;
   }
 
-  .buttons a{
+  .buttons a {
     font-size: 0.8rem;
   }
 
-  .top{
+  .top {
     font-size: 1.8rem;
   }
 }

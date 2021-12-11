@@ -3,6 +3,7 @@ import styles from './Project.module.css';
 import Layout from '../component/Layout';
 import { createClient } from 'contentful';
 import Link from 'next/dist/client/link';
+import ReactPlayer from 'react-player';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -42,6 +43,8 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const project = ({ projects, project }) => {
+  // console.log(project.fields.video.fields.file.url);
+
   // getting slugs for previous and next project. If looking at first project, previous will be the last - if looking at the last, next will be the [0]
   const currentIndex = projects.indexOf(
     projects.find((item) => item.fields.url === project.fields.url)
@@ -69,6 +72,16 @@ const project = ({ projects, project }) => {
           <h3>{project.fields.description.content[1].content[0].value}</h3>
           <p>{project.fields.description.content[2].content[0].value}</p>
         </div>
+        {project.fields.video && (
+            <ReactPlayer
+              url={`https:${project.fields.video.fields.file.url}`}
+              playing={true}
+              loop={true}
+              width='100%'
+              height='100%'
+              controls={true}
+            />
+        )}
         <div className={`${project.fields.url} ${styles.imagesContainer}`}>
           {project.fields.images.map((image) => {
             return (
