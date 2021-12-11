@@ -1,6 +1,5 @@
 .modal{
     position: fixed;
-    /* position: absolute; */
     top: 0;
     left: 0;
     width: 100%;
@@ -15,7 +14,6 @@
     color: #ffff;
     font-weight: 600;
     z-index: 2;
-    /* overflow: hidden; */
 }
 
 .modal a {
@@ -26,7 +24,7 @@
     color: #fe5f55;;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
     .modal{
         font-size: 2rem;
     }
