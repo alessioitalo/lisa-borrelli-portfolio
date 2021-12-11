@@ -1,3 +1,4 @@
+import { createClient } from 'contentful';
 import Layout from '../component/Layout';
 import Dots from '../component/Dots';
 import Image from 'next/image';
@@ -6,7 +7,20 @@ import skills from '../public/skills.svg';
 import aboutImg from '../public/about.svg';
 import InterestsList from '../component/InterestsList';
 
-const about = () => {
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+  });
+  const response = await client.getEntries({ content_type: 'bio' });
+  return {
+    props: {
+      bio: response.items[0],
+    },
+  };
+}
+
+const about = ({ bio }) => {
   return (
     <>
       <Layout>
@@ -16,21 +30,13 @@ const about = () => {
         <div className={styles.container}>
           <div className={styles.bio}>
             <Dots />
-            <p>
-              Ciao, I am Lisa Borrelli and I am a Digital & Graphic Designer
-              based in London. During my 5+ years of experience creating digital
-              assets for websites, printing branded POS material, art direction
-              for seasonal campaigns and developing user interfaces designs.{' '}
-            </p>
-            <p>
-              New challanges lead me to new ideas and travelling is one my
-              source of inspiration. I love visiting museums and exploring
-              London in my spare time, but I also enjoy blinge watching series.
-            </p>
-            <p>
-              My aim is to use my variety of skills to help businesses grow with
-              visual impactful design.{' '}
-            </p>
+            {bio.fields.bio.content.map((paragraph) => {
+              return (
+                <div key={bio.fields.bio.content.indexOf(paragraph)}>
+                  {paragraph.content[0].value}
+                </div>
+              );
+            })}
           </div>
         </div>
         <div className={styles.container}>

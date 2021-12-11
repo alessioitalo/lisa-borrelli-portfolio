@@ -80,6 +80,7 @@ const project = ({ projects, project }) => {
               width='100%'
               height='100%'
               controls={true}
+              style={{lineHeight: '0'}}
             />
         )}
         <div className={`${project.fields.url} ${styles.imagesContainer}`}>
