@@ -33,6 +33,7 @@
 .skillsImage {
   align-self: flex-end;
   padding: 2rem;
+  margin-right: 5rem;
 }
 
 .second {
@@ -62,6 +63,8 @@
   padding: 2rem 0;
   color: #ffffff;
   font-size: 0.8rem;
+  align-self: flex-start;
+  margin-left: 5rem;
 }
 
 .skills > div {
@@ -86,10 +89,9 @@
 .lines {
   position: absolute;
   background-repeat: no-repeat;
-
 }
 
-.lines{
+.lines {
   background-image: url('../public/lines.svg');
   width: 200px;
   height: 200px;
@@ -137,6 +139,11 @@
   .skills {
     width: 100%;
     font-size: 0.6rem;
+    margin: 0;
+  }
+
+  .skillsImage {
+    margin: 0;
   }
 
   .skills progress {
