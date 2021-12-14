@@ -79,10 +79,10 @@
   transition: linear 0.2s;
 }
 
-/* .previewContainer{
+.previewContainer{
   color: #0a0935;
   padding: 1rem;
-} */
+}
 
 /* .previewContainer div{
   display: flex;
