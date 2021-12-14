@@ -1,0 +1,18 @@
+.preview{
+    max-width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: #0a0935;
+}
+
+.preview img{
+    max-width: 30vw;
+}
+
+@media (max-width: 768px){
+    .preview img{
+        max-width: 60vw;
+    }
+}
