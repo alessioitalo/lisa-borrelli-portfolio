@@ -54,12 +54,13 @@
 
 .fixedTopButton{
   width: 50px;
+  padding: 2.5px 0;
   font-size: 2.5rem;
   text-align: center;
   line-height: 0;
   position: fixed;
   background-color: #fe5f55;
-  border-radius: 5px;
+  border-radius: 50%;
   color: #fff;
   bottom: 10.5rem;
   right: 4rem;
@@ -82,68 +83,24 @@
 .previewContainer{
   color: #0a0935;
   padding: 1rem;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
 }
 
-/* .previewContainer div{
+.previews{
+  width: 80%;
   display: flex;
-  justify-content: space-between;
-} */
-
-/* .buttonsContainer {
-  display: flex;
-  background-color: #0a0935;
-  color: white;
-  justify-content: space-between;
-  align-items: center;
+  flex-wrap: wrap;
 }
 
-.buttons {
-  display: flex;
-  width: 50%;
-} */
-
-/* .buttons a,
-.top {
-  background-color: #fe5f55;
-  border-radius: 10px;
-  cursor: pointer;
-} */
-
-/* .buttons a {
-  padding: 1rem 0.5rem;
-  height: 100%;
-  color: white;
-  margin: 0.5rem;
-}
-
-.top {
-  background-color: #fe5f55;
-  padding: 0.5rem 0.75rem 0.25rem;
-  margin: 1rem;
-  font-size: 2rem;
-} */
 
 @media (max-width: 768px) {
   .fixedTopButton{
     right:0.5rem;
   }
-  /* .mainImage {
-    height: 100%;
-  } */
 
-  /* .previewContainer div{
-    flex-direction: column;
+  .previews{
+   flex-direction: column;
   }
-
-  .buttons {
-    width: 80%;
-  }
-
-  .buttons a {
-    font-size: 0.7rem;
-  }
-
-  .top {
-    font-size: 1.8rem;
-  } */
 }

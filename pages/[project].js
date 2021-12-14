@@ -39,7 +39,6 @@ export const getStaticProps = async ({ params }) => {
 
 // actual component - takes in TWO PROPS: array of projects and selected project
 const Project = ({ projects, project }) => {
-
   // return to Top button must only be visible after scroll. Initializing state, then Effect fired with eventListener
   const [showTopButton, setShowTopButton] = useState(false);
   const topButtonHandler = () => {
@@ -60,7 +59,7 @@ const Project = ({ projects, project }) => {
   return (
     <Layout>
       <div className={styles.container}>
-      {/* // main image of project */}
+        {/* // main image of project */}
         <div
           className={styles.mainImage}
           style={{
@@ -75,7 +74,7 @@ const Project = ({ projects, project }) => {
           <h3>{project.fields.description.content[1].content[0].value}</h3>
           <p>{project.fields.description.content[2].content[0].value}</p>
         </div>
-          {/* // return to Top button */}
+        {/* // return to Top button */}
         <div
           className={`${styles.fixedTopButton} ${
             showTopButton ? '' : styles.transparent
@@ -85,7 +84,7 @@ const Project = ({ projects, project }) => {
             <BiArrowToTop />
           </a>
         </div>
-          {/* // if video is available, to be rendered here */}
+        {/* // if video is available, to be rendered here */}
         {project.fields.video && (
           <ReactPlayer
             url={`https:${project.fields.video.fields.file.url}`}
@@ -113,17 +112,19 @@ const Project = ({ projects, project }) => {
         {/* // preview container where all the elements of the array projects 
         // that are not the selected projects are mapped and rendered as preview */}
         <div className={styles.previewContainer}>
-          <h3>You may also be interested in...</h3>
-          {projects
-            .filter((item) => item.fields.name !== project.fields.name)
-            .map((remainingProject) => {
-              return (
-                <Preview
-                  project={remainingProject}
-                  key={projects.indexOf(remainingProject)}
-                />
-              );
-            })}
+          <h2>See other projects</h2>
+          <div className={styles.previews}>
+            {projects
+              .filter((item) => item.fields.name !== project.fields.name)
+              .map((remainingProject) => {
+                return (
+                  <Preview
+                    project={remainingProject}
+                    key={projects.indexOf(remainingProject)}
+                  />
+                );
+              })}
+          </div>
         </div>
       </div>
     </Layout>
