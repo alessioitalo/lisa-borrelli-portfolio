@@ -38,7 +38,7 @@ export const getStaticProps = async ({ params }) => {
 };
 
 // actual component - takes in TWO PROPS: array of projects and selected project
-const project = ({ projects, project }) => {
+const Project = ({ projects, project }) => {
 
   // return to Top button must only be visible after scroll. Initializing state, then Effect fired with eventListener
   const [showTopButton, setShowTopButton] = useState(false);
@@ -130,4 +130,4 @@ const project = ({ projects, project }) => {
   );
 };
 
-export default project;
+export default Project;
