@@ -10,7 +10,7 @@ const contact = () => {
     <>
       <Layout>
         <div className={styles.container}>
-          <Image src={contactMe} loading='eager' alt=''/>
+          <Image src={contactMe} alt='about'/>
         </div>
         <div className={styles.formContainer}>
           <ContactForm />

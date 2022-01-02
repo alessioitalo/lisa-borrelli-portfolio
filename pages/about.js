@@ -25,7 +25,7 @@ const about = ({ bio }) => {
     <>
       <Layout>
         <div className={styles.container}>
-          <Image src={aboutImg} loading='eager' alt='' />
+          <Image src={aboutImg} alt='about' />
         </div>
         <div className={styles.container}>
           <div className={styles.bio}>
