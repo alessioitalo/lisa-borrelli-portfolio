@@ -42,13 +42,14 @@
 }
 
 .imagesContainer {
-  width: 100%;
-  min-height: 100vh;
+  width: 90%;
   position: relative;
+  margin: auto;
   line-height: 0;
 }
 
 .imagesContainer img {
+  margin: 2rem 0;
   width: 100%;
 }
 
@@ -88,11 +89,20 @@
 .previews{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
 
+
 @media (max-width: 768px) {
+
+  .imagesContainer{
+    width: 100%;
+  }
+
+  .imagesContainer img{
+    margin: 0;
+  }
   .fixedTopButton{
     right:0.5rem;
   }
