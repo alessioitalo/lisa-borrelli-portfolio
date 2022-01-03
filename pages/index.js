@@ -59,10 +59,12 @@ export default function Home({ projects }) {
           <Dots />
         </div>
         <Carousel
-          heightMode='first'
-          framePadding='20px'
           defaultControlsConfig={{
-            pagingDotsStyle: { fill: '#fe5f55' },
+            pagingDotsStyle: {
+              fill: '#fe5f55',
+              position: 'relative',
+              bottom: '2rem',
+            },
           }}
           renderCenterLeftControls={({ previousSlide }) => (
             <BsFillArrowLeftCircleFill
@@ -79,9 +81,15 @@ export default function Home({ projects }) {
         >
           {projects.map((project) => (
             <Link href={`/${project.fields.url}`} key={project.sys.id}>
-              <img
+              {/* <img
                 src={`https:${project.fields.mainImage.fields.file.url}`}
                 alt='project preview'
+              /> */}
+              <div
+                className={styles.slide}
+                style={{
+                  backgroundImage: `url(https:${project.fields.mainImage.fields.file.url})`,
+                }}
               />
             </Link>
           ))}

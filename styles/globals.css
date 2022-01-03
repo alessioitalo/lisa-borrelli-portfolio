@@ -37,6 +37,17 @@ a {
   opacity: 0.5;
 }
 
+.paging-dot {
+  width: 20px;
+  height: 20px;
+}
+
+.paging-dot > circle {
+  r: 6px;
+  cx: 10px;
+  cy: 10px;
+}
+
 #uiDesign,
 #branding {
   background-color: #fe5f55;
@@ -60,13 +71,12 @@ a {
 
 .brunell img:nth-of-type(7) {
   width: 42.5%;
-  margin: 0 2.5% 5% 5%
+  margin: 0 2.5% 5% 5%;
 }
 
 .brunell img:nth-of-type(8) {
   width: 42.5%;
-  margin: 0 5% 5% 2.5%
-
+  margin: 0 5% 5% 2.5%;
 }
 
 .tackler img:nth-of-type(2),

@@ -44,8 +44,11 @@
   padding: 4rem 0 2rem;
 }
 
-.carouselImage {
+.slide {
+  min-height: 80vh;
   width: 100vw;
+  background-size: cover;
+  background-position: center;
 }
 
 .arrow {
@@ -67,6 +70,8 @@
 .right {
   right: 3rem;
 }
+
+
 
 @media (max-width: 768px) {
   .splash {
@@ -92,11 +97,9 @@
     order: 1;
   }
 
-  .carousel {
-    width: 100%;
-    padding: 0;
+  .slide {
+    min-height: 60vh;
   }
-
   .arrow {
     width: 2rem;
   }
