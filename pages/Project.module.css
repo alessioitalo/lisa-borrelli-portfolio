@@ -52,7 +52,7 @@
   width: 100%;
 }
 
-.fixedTopButton{
+.fixedTopButton {
   width: 50px;
   padding: 2.5px 0;
   font-size: 2.5rem;
@@ -68,38 +68,44 @@
   cursor: pointer;
 }
 
-.transparent{
+.transparent {
   background-color: transparent;
   color: transparent;
   pointer-events: none;
 }
 
-.fixedTopButton, .transparent{
+.fixedTopButton,
+.transparent {
   transition: linear 0.2s;
 }
 
-.previewContainer{
+.previewContainer {
   color: #0a0935;
   padding: 1rem;
   display: flex;
   flex-direction: column;
 }
 
-.previews{
+.previews {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
 }
 
-
-
 @media (max-width: 768px) {
-
-  .fixedTopButton{
-    right:0.5rem;
+  .fixedTopButton {
+    right: 0.5rem;
   }
 
-  .previews{
-   flex-direction: column;
+  .previews {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .previews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
