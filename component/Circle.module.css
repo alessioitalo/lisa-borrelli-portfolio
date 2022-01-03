@@ -1,0 +1,136 @@
+.circleContainer {
+  position: relative;
+}
+
+.circle {
+  width: 325px;
+  height: 325px;
+  border-radius: 50%;
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+
+.back {
+  position: absolute;
+  top: -1rem;
+  left: 1.5rem;
+  z-index: 0;
+}
+
+.backDark {
+  background-image: repeating-linear-gradient(
+    135deg,
+    #0a0935,
+    #0a0935 20px,
+    #e4f427 20px,
+    #e4f427 25px
+  );
+}
+
+.backLight {
+  background-image: repeating-linear-gradient(
+    135deg,
+    #fe5f55,
+    #fe5f55 20px,
+    #0a0935 20px,
+    #0a0935 25px
+  );
+}
+
+.light {
+  background-color: #e4f427;
+}
+
+.dark {
+  background-color: #fe5f55;
+}
+
+.text {
+  font-size: 2.8rem;
+  margin: auto;
+  color: #0a0935;
+}
+
+.decorations {
+  position: absolute;
+  bottom: 3rem;
+  z-index: 2;
+}
+
+.lineDark,
+.lineLight {
+  height: 3px;
+  width: 20px;
+  position: relative;
+  right: -40px;
+  bottom: 20px;
+  transform: rotate(45deg);
+}
+
+.lineDark,
+.lineDark::before,
+.lineDark::after {
+  background-color: #e4f427;
+}
+
+.lineLight,
+.lineLight::before,
+.lineLight::after {
+  background-color: #0a0935;
+}
+
+.lineDark::before,
+.lineDark::after,
+.lineLight::before,
+.lineLight::after {
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 20px;
+}
+
+.lineDark::before,
+.lineLight::before {
+  left: 10px;
+  top: -9px;
+  transform: rotate(-90deg);
+}
+
+.lineDark::after,
+.lineLight::after {
+  right: 10px;
+  bottom: -9px;
+  transform: rotate(-90deg);
+}
+.line:nth-of-type(1) {
+  left: -7px;
+}
+
+.line:nth-of-type(2) {
+  left: 1px;
+}
+
+.line:nth-of-type(3) {
+  left: 8px;
+}
+
+.line:nth-of-type(4) {
+  left: 15px;
+}
+
+.line:nth-of-type(5) {
+  left: 23px;
+}
+
+
+@media (max-width: 768px) {
+  .circle {
+    width: 250px;
+    height: 250px;
+  }
+
+  .text {
+    font-size: 2.2rem;
+  }
+}

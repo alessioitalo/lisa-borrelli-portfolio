@@ -1,8 +1,8 @@
-import styles from './Dots.module.css'
+import styles from './Dots.module.css';
 
-const Dots = () => {
+const Dots = ({ light }) => {
   return (
-    <div className={styles.dots}>
+    <div className={`${styles.dots} ${light === 'light' && styles.light}`}>
       <span />
       <span />
       <span />

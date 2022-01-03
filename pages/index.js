@@ -58,7 +58,7 @@ export default function Home({ projects }) {
           <h1>My Projects</h1>
           <Dots />
         </div>
-        <Carousel
+        {/* <Carousel
           heightMode='first'
           framePadding='20px'
           defaultControlsConfig={{
@@ -85,7 +85,7 @@ export default function Home({ projects }) {
               />
             </Link>
           ))}
-        </Carousel>
+        </Carousel> */}
       </Layout>
     </>
   );

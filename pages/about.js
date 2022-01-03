@@ -4,7 +4,7 @@ import Dots from '../component/Dots';
 import Image from 'next/image';
 import styles from './About.module.css';
 import skills from '../public/skills.svg';
-import aboutImg from '../public/about.svg';
+import Circle from '../component/Circle';
 import InterestsList from '../component/InterestsList';
 
 export async function getStaticProps() {
@@ -25,7 +25,8 @@ const about = ({ bio }) => {
     <>
       <Layout>
         <div className={styles.container}>
-          <Image src={aboutImg} alt='about' />
+          {/* <Image src={aboutImg} alt='about' /> */}
+          <Circle text='About me' style='dark'/>
         </div>
         <div className={styles.container}>
           <div className={styles.bio}>

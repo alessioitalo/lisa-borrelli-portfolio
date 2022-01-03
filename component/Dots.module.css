@@ -1,5 +1,6 @@
 .dots {
     display: flex;
+
   }
   
   .dots span {
@@ -10,3 +11,6 @@
     border-radius: 50%;
   }
   
+  .light span{
+    background-color: #0a0935;
+  }
