@@ -1,5 +1,4 @@
 import Layout from '../component/Layout';
-// import Head from 'next/head';
 import styles from './Contact.module.css';
 import ContactForm from '../component/ContactForm';
 import Circle from '../component/Circle';

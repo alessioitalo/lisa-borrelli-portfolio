@@ -20,13 +20,13 @@ const Layout = ({ children }) => {
           content='Digital and Graphic Designer based in London, UK.'
         />
         <meta name='twitter:card' content='summary' />
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='shortcut icon' href='/favicon.ico' type='image/x-icon' />
+        <link rel='icon' href='/favicon.ico' type='image/x-icon' />
+        <title>Lisa Borrelli - Digital and Graphic Designer</title>
       </Head>
       <main>
         <Navbar />
-        <main className={styles.content}>
-          {children}
-        </main>
+        <main className={styles.content}>{children}</main>
       </main>
       <footer className={styles.footer}>
         ©2021 Lisa Borrelli
