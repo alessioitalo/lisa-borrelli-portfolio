@@ -42,14 +42,13 @@
 }
 
 .imagesContainer {
-  width: 90%;
+  width: 100%;
   position: relative;
   margin: auto;
   line-height: 0;
 }
 
 .imagesContainer img {
-  margin: 2rem 0;
   width: 100%;
 }
 
@@ -96,13 +95,6 @@
 
 @media (max-width: 768px) {
 
-  .imagesContainer{
-    width: 100%;
-  }
-
-  .imagesContainer img{
-    margin: 0;
-  }
   .fixedTopButton{
     right:0.5rem;
   }
