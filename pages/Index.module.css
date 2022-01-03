@@ -57,7 +57,7 @@
   width: 2rem;
   height: 2rem;
   opacity: 0.7;
-  color: #fe5f55;
+  color: #fff;
 }
 
 .arrow:hover {
@@ -70,8 +70,6 @@
 .right {
   right: 3rem;
 }
-
-
 
 @media (max-width: 768px) {
   .splash {

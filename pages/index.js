@@ -61,7 +61,7 @@ export default function Home({ projects }) {
         <Carousel
           defaultControlsConfig={{
             pagingDotsStyle: {
-              fill: '#fe5f55',
+              fill: '#fff',
               position: 'relative',
               bottom: '2rem',
             },
