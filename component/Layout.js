@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
         <main className={styles.content}>{children}</main>
       </main>
       <footer className={styles.footer}>
-        ©2021 Lisa Borrelli
+        ©{new Date().getFullYear()} Lisa Borrelli
         <div className={styles.icons}>
           <Link href='https://www.instagram.com/lisaborrelli90/'>
             <a>
