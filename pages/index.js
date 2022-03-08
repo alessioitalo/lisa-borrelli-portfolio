@@ -51,7 +51,7 @@ export default function Home({ projects }) {
             <h4>{writer}</h4>
           </div>
           <div className={styles.halfSplash}>
-            <Image src={photo} alt='lisa' />
+            <Image src={photo} alt='lisa' priority={true} />
           </div>
         </div>
         <div className={styles.title}>
