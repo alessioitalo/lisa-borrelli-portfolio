@@ -67,6 +67,7 @@ const Project = ({ projects, project }) => {
           }}
         >
           <div className={styles.mainOverlay} />
+          <div className={styles.arrow}></div>
         </div>
         {/* // description of project */}
         <div className={styles.description}>
@@ -93,19 +94,20 @@ const Project = ({ projects, project }) => {
             width='100%'
             height='100%'
             controls={true}
-            style={{ lineHeight: '0' }}
+            style={{ lineHeight: '0', marginBottom: '2.5rem' }}
           />
         )}
         {/* // mapping all images contained in project */}
         <div className={`${project.fields.url} ${styles.imagesContainer}`}>
           {project.fields.images.map((image) => {
             return (
-              <img
-                key={image.fields.file.fileName}
-                src={`https:${image.fields.file.url}`}
-                loading='lazy'
-                alt={image.fields.file.fileName}
-              />
+              <div key={image.fields.file.fileName}>
+                <img
+                  src={`https:${image.fields.file.url}`}
+                  loading='lazy'
+                  alt={image.fields.file.fileName}
+                />
+              </div>
             );
           })}
         </div>
