@@ -36,6 +36,7 @@
   left: calc(50% - 1rem);
   animation: bounce 0.5s infinite alternate;
   -webkit-animation: bounce 0.5s infinite alternate;
+  z-index: 2;
 }
 
 .description {

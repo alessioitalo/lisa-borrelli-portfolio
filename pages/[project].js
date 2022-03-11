@@ -82,7 +82,7 @@ const Project = ({ projects, project }) => {
           }`}
         >
           <a href='#top'>
-            <BiArrowToTop />
+            <BiArrowToTop fill='white' />
           </a>
         </div>
         {/* // if video is available, to be rendered here */}
