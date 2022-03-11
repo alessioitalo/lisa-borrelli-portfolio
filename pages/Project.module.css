@@ -33,6 +33,7 @@
 .video {
   position: relative;
   padding-top: 56.25%;
+  margin-bottom: 2.5rem;
 }
 
 .react-player {
@@ -48,8 +49,15 @@
   line-height: 0;
 }
 
+.imagesContainer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem 5rem;
+}
+
 .imagesContainer img {
-  width: 100%;
+  max-width: 100%;
 }
 
 .fixedTopButton {
@@ -106,6 +114,10 @@
 
   .previews {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .imagesContainer div {
+    padding: 1rem 2rem;
   }
 }
 
