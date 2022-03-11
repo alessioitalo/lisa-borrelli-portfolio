@@ -67,6 +67,7 @@ const Project = ({ projects, project }) => {
           }}
         >
           <div className={styles.mainOverlay} />
+          <div className={styles.arrow}></div>
         </div>
         {/* // description of project */}
         <div className={styles.description}>

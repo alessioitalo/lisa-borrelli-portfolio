@@ -25,6 +25,19 @@
   left: 0;
 }
 
+.arrow {
+  width: 2rem;
+  height: 2rem;
+  border: 0.25rem solid #fff;
+  border-left: 0;
+  border-top: 0;
+  position: absolute;
+  bottom: 100px;
+  left: calc(50% - 1rem);
+  animation: bounce 0.5s infinite alternate;
+  -webkit-animation: bounce 0.5s infinite alternate;
+}
+
 .description {
   padding: 2rem 3rem;
   color: #0a0935;
@@ -99,6 +112,24 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   padding-bottom: 4rem;
+}
+@keyframes bounce {
+  from {
+    transform: translateY(0px) rotate(45deg);
+
+  }
+  to {
+    transform: translateY(-15px) rotate(45deg);
+    
+  }
+}
+@-webkit-keyframes bounce {
+  from {
+    transform: translateY(0px) rotate(45deg);
+  }
+  to {
+    transform: translateY(-15px) rotate(45deg);
+  }
 }
 
 @media (max-width: 992px) {
