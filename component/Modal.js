@@ -23,6 +23,9 @@ const Modal = ({ modalHandler }) => {
       <Link href='/contact'>
         <a onClick={() => routerHandler('/contact')}>Get in Touch</a>
       </Link>
+      <Link href='/#projects'>
+        <a onClick={() => routerHandler('/')}>Portfolio</a>
+      </Link>
     </div>
   );
 };

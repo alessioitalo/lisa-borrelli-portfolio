@@ -40,7 +40,7 @@
 }
 
 .description {
-  padding: 2rem 3rem;
+  padding: 2rem 5.5rem;
   color: #0a0935;
 }
 
@@ -147,6 +147,11 @@
 
   .previews {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .description {
+    padding: 1rem 2rem;
+    color: #0a0935;
   }
 
   .imagesContainer div {
