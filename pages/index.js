@@ -54,7 +54,7 @@ export default function Home({ projects }) {
             <Image src={photo} alt='lisa' priority={true} />
           </div>
         </div>
-        <div className={styles.title}>
+        <div className={styles.title} id='projects'>
           <h1>My Projects</h1>
           <Dots />
         </div>
