@@ -31,7 +31,7 @@ const writer = (
       strings: [
         'I am a Digital Designer',
         'I am a Graphic Designer',
-        'I am a Branding Designer',
+        'I am a Brand Designer',
         'I am a UI Designer',
       ],
       autoStart: true,
