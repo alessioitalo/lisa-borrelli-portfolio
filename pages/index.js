@@ -1,16 +1,13 @@
+import { createClient } from 'contentful';
+import { useState } from 'react';
+import Typewriter from 'typewriter-effect';
 import Image from 'next/image';
 import Link from 'next/link';
 import Layout from '../component/Layout';
 import Dots from '../component/Dots';
 import styles from './Index.module.css';
 import photo from '../public/photo.svg';
-import { createClient } from 'contentful';
-import Typewriter from 'typewriter-effect';
-import Carousel from 'nuka-carousel';
-import {
-  BsFillArrowLeftCircleFill,
-  BsFillArrowRightCircleFill,
-} from 'react-icons/bs';
+
 
 export async function getStaticProps() {
   const client = createClient({
@@ -41,8 +38,9 @@ const writer = (
 );
 
 export default function Home({ projects }) {
+
+  const [hoverEffect, setHoverEffect] = useState(null)
   return (
-    <>
       <Layout>
         <div className={styles.splash}>
           <div className={styles.halfSplash}>
@@ -58,43 +56,26 @@ export default function Home({ projects }) {
           <h1>My Projects</h1>
           <Dots />
         </div>
-        <Carousel
-          defaultControlsConfig={{
-            pagingDotsStyle: {
-              fill: '#fff',
-              position: 'relative',
-              bottom: '2rem',
-            },
-          }}
-          renderCenterLeftControls={({ previousSlide }) => (
-            <BsFillArrowLeftCircleFill
-              className={`${styles.arrow} ${styles.left}`}
-              onClick={previousSlide}
-            />
-          )}
-          renderCenterRightControls={({ nextSlide }) => (
-            <BsFillArrowRightCircleFill
-              className={`${styles.arrow} ${styles.right}`}
-              onClick={nextSlide}
-            />
-          )}
-        >
+        <div className={styles.grid}>
           {projects.map((project) => (
-            <Link href={`/${project.fields.url}`} key={project.sys.id}>
-              {/* <img
-                src={`https:${project.fields.mainImage.fields.file.url}`}
-                alt='project preview'
-              /> */}
-              <div
-                className={styles.slide}
-                style={{
-                  backgroundImage: `url(https:${project.fields.mainImage.fields.file.url})`,
-                }}
-              />
+            <Link href={`/${project.fields.url}`} key={project.sys.id} passHref>
+              <div className={styles.imageContainer} onMouseEnter={()=>{setHoverEffect(project.sys.id)}} onMouseLeave={()=>{setHoverEffect(null)}}>
+                <Image
+                  src={`https:${project.fields.mainImage.fields.file.url}`}
+                  alt={project.fields.description.content[0].content[0].value}
+                  width={500}
+                  height={300}
+                />
+                <div className={styles.imageOverlay} style={{opacity: `${hoverEffect === project.sys.id? 0.8 : 0}`}}>
+                  <h2>
+                    {project.fields.description.content[0].content[0].value}
+                  </h2>
+                  <h5>{project.fields.description.content[1].content[0].value}</h5>
+                </div>
+              </div>
             </Link>
           ))}
-        </Carousel>
+        </div>
       </Layout>
-    </>
   );
 }
