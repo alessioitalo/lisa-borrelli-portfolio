@@ -90,7 +90,7 @@ const Project = ({ projects, project }) => {
             <BiArrowToTop/>
           </a>
         </div>
-        {/* // if video is available, to be rendered here */}
+        {/* first video */}
         {project.fields.video && (
           <ReactPlayer
             url={`https:${project.fields.video.fields.file.url}`}
@@ -102,8 +102,8 @@ const Project = ({ projects, project }) => {
             style={{ lineHeight: '0', marginBottom: '2.5rem' }}
           />
         )}
-        {/* // mapping all images contained in project */}
-        <div className={`${project.fields.url} ${styles.imagesContainer}`}>
+        {/* first block of images */}
+        {project.fields.images && <div className={`${project.fields.url} ${styles.imagesContainer}`}>
           {project.fields.images.map((image) => {
             return (
               <div key={image.fields.file.fileName}>
@@ -115,7 +115,59 @@ const Project = ({ projects, project }) => {
               </div>
             );
           })}
-        </div>
+        </div>}
+        {/* second video */}
+        {project.fields.videoMiddle && (
+          <ReactPlayer
+            url={`https:${project.fields.videoMiddle.fields.file.url}`}
+            playing={true}
+            loop={true}
+            width='100%'
+            height='100%'
+            controls={true}
+            style={{ lineHeight: '0', marginBottom: '2.5rem' }}
+          />
+        )}
+        {/* second block of images */}
+        {project.fields.imagesMiddle &&<div className={`${project.fields.url} ${styles.imagesContainer}`}>
+          {project.fields.imagesMiddle.map((image) => {
+            return (
+              <div key={image.fields.file.fileName}>
+                <img
+                  src={`https:${image.fields.file.url}`}
+                  loading='lazy'
+                  alt={image.fields.file.fileName}
+                />
+              </div>
+            );
+          })}
+        </div>}
+          {/* third video */}
+          {project.fields.videoBottom && (
+          <ReactPlayer
+            url={`https:${project.fields.videoBottom.fields.file.url}`}
+            playing={true}
+            loop={true}
+            width='100%'
+            height='100%'
+            controls={true}
+            style={{ lineHeight: '0', marginBottom: '2.5rem' }}
+          />
+        )}
+          {/* second block of images */}
+        {project.fields.imagesBottom && <div className={`${project.fields.url} ${styles.imagesContainer}`}>
+          {project.fields.imagesBottom.map((image) => {
+            return (
+              <div key={image.fields.file.fileName}>
+                <img
+                  src={`https:${image.fields.file.url}`}
+                  loading='lazy'
+                  alt={image.fields.file.fileName}
+                />
+              </div>
+            );
+          })}
+        </div>}
         {/* // preview container where all the elements of the array projects 
         // that are not the selected projects are mapped and rendered as preview */}
         <div className={styles.previewContainer}>
