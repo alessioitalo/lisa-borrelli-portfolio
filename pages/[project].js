@@ -5,6 +5,7 @@ import Preview from '../component/Preview';
 import { createClient } from 'contentful';
 import ReactPlayer from 'react-player';
 import { useState, useEffect } from 'react';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 // connecting to Contentful, getting Props and Paths
 const client = createClient({
@@ -56,6 +57,10 @@ const Project = ({ projects, project }) => {
   }, [showTopButton]);
 
   // actual component being returned
+
+  project.fields.description.content.forEach((i)=>{
+    console.log(i.content[0].value)
+  })
   return (
     <Layout>
       <div className={styles.container}>
@@ -71,9 +76,9 @@ const Project = ({ projects, project }) => {
         </div>
         {/* // description of project */}
         <div className={styles.description}>
-          <h1>{project.fields.description.content[0].content[0].value}</h1>
-          <h3>{project.fields.description.content[1].content[0].value}</h3>
-          <p>{project.fields.description.content[2].content[0].value}</p>
+          {project.fields.description.content.map((item)=>{
+            return documentToReactComponents(item) 
+          })}
         </div>
         {/* // return to Top button */}
         <div
